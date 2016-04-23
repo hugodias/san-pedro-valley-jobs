@@ -1,0 +1,107 @@
+// import the CSS framework
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "variables";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F4F3EF;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: -0.01em;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+input::-webkit-input-placeholder {
+  color: $primary-color-dark !important;
+}
+
+input:-moz-placeholder {
+  color: $primary-color-dark !important;
+}
+
+input::-moz-placeholder {
+  color: $primary-color-dark !important;
+}
+
+input:-ms-input-placeholder {
+  color: $primary-color-dark !important;
+}
+
+a{
+  color: $primary-color;
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited{
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+.color-primary{
+  color: $primary-color;
+}
+.color-darken-primary-dark{
+  color: darken($primary-color-dark, 25);
+}
+.btn-primary{
+  background-color: $accent-color;
+  color: $primary-color-text;
+  border-color: $accent-color;
+  &:hover{
+    background-color: darken($accent-color,5)
+  }
+}
+
+h3{
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+}
+.card{
+  border-radius: 6px;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
+  position: relative;
+  background: #fff;
+  display: block;
+  color: rgba(0,0,0,0.7);
+  margin-bottom: 60px;
+  &-content{
+    padding: 32px 40px;
+    &--editor{
+      padding: 10px 0 0 0;
+    }
+  }
+}
+
+.btn-white{
+  background-color: $primary-color-text;
+  color: $primary-color-dark;
+  padding: 10px 40px;
+  font-size: 18px;
+}
+
+.well{
+  padding: 32px 20px 24px 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #EAEDFF;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  * {
+    font-size: 16px;
+    line-height: 20px;
+    font-height: 600;
+    color: #484B5D;
+  }
+  hr{
+    border-color: darken(#EAEDFF, 5);
+  }
+}
+
+.help-block{
+  font-size: 13px;
+}

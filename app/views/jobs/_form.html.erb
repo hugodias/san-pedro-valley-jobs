@@ -1,0 +1,98 @@
+<div class="section__form-job">
+
+    <%= simple_form_for(@job) do |f| %>
+
+    <div class="container step1">
+      <div class="row">
+        <div class="col-sm-2">
+          <%= fa_icon 'building 3x', class: 'icon-align color-darken-primary-dark' %>
+        </div>
+        <div class="col-sm-8">
+          <h3 class="color-darken-primary-dark">Cadastrar vaga</h3>
+          <div class="card">
+            <div class="card-content">
+              <%= f.association :company, label: 'Comece selecionando a startup', hint: 'A startup não aparece aqui? Cadastre gratuitamente em http://www.sanpedrovalley.org', input_html: { "data-placeholder": "Escolha uma Startup", autofocus: true} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <%= fa_icon 'user 3x', class: 'icon-align' %>
+          </div>
+          <div class="col-sm-8">
+            <h3>Informações do responsável</h3>
+            <div class="card">
+              <div class="card-content">
+                <i>Estas informações são necessárias para que você possa posteriormente alterar ou excluir uma vaga do SPV Jobs.</i>
+                <div class="clearfix"></div><br>
+                <%= f.input :author, label: 'Seu nome' %>
+                <%= f.input :author_email, label: 'Seu e-mail' %>
+
+                <a class="btn btn-primary goto_step3">Continuar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step3">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2">
+            <%= fa_icon 'info 3x', class: 'icon-align' %>
+          </div>
+          <div class="col-sm-8">
+            <h3>Informações sobre a vaga</h3>
+            <div class="card">
+              <div class="card-content">
+                <%= f.input :title, label: 'Titulo da vaga' %>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6 col-sm-7">
+                    <%= f.association :category, as: :radio_buttons, label: 'Categoria' %>
+                  </div>
+                  <div class="col-md-6 col-sm-5">
+                    <%= f.association :job_type, as: :radio_buttons, label: 'Regime de contratação' %>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6">
+                    <%= f.input :location, label: 'Localização', hint: 'Ex: Savassi, BH' %>
+                  </div>
+                  <div class="col-md-6">
+                    <%= f.input :salary, label: 'Salário' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Descrição da vaga</h3>
+            <div class="card">
+              <div class="card-content card-content--editor">
+                <%= f.trix_editor :description %>
+              </div>
+            </div>
+
+            <h3>Como as pessoas se aplicam para esta vaga?</h3>
+            <div class="card">
+              <div class="card-content card-content--editor">
+                <%= f.trix_editor :how_to_apply %>
+              </div>
+            </div>
+
+
+            <%= f.button :submit, class: 'btn btn-primary btn-block', "data-disable-with": "Salvando..." %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+</div>
+<div class="clearfix"></div>

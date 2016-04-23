@@ -1,0 +1,16 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title><%= content_for?(:title) ? yield(:title) : "Sanpedrovalleyjobs" %></title>
+      <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sanpedrovalleyjobs" %>">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+    </head>
+    <body class="<%= curr_page %>">
+      <%= render 'layouts/navigation' %>
+     	<%= yield %>
+    </body>
+  </html>

@@ -1,0 +1,14 @@
+<div class="section__colored-top__form">
+  <%= simple_form_for(:query, method: 'get') do |f| %>
+  <div class="col-md-10">
+    <%= fa_icon 'search 3x' %>
+    <%= f.input :q, label: false, autofocus: true, placeholder: 'Palavras chave, empresas, cidades', input_html: { autocomplete: "off", value: @query } %>
+  </div>
+  <div class="col-md-2">
+    <%= button_tag(type: 'submit', class: "btn btn-white") do %>
+       Buscar
+     <% end %>
+  </div>
+  <% end %>
+  <div class="clearfix"></div>
+</div>

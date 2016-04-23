@@ -1,0 +1,74 @@
+<div class="section__colored-top section__colored-top--padding-top">
+  <div class="container">
+    <div class="section__job-header">
+      <h1 class="section__job-header__title">
+        <%= fa_icon 'camera-retro' %>
+        <%= @job.title %>
+      </h1>
+      <h5>
+        Postado a <%= relative_date(@job.updated_at) %>
+      </h5>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="section__job-description">
+            <h2>Descrição da vaga</h2>
+            <%= @job.description.html_safe %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="section__job-info">
+            <div class="well">
+              <p>
+                <h4 class="section__job-info__title">
+                  <%= link_to fa_icon('building', text: @job.company.title), company_path(@job.company) %>
+                </h4>
+                <% if @job.company.website.present? %>
+                  <small class="section__job-info__link">
+                    <%= link_to fa_icon('external-link', text: 'Website'), @job.company.website, target: '_blank' %></small>
+                <% end %>
+              </p>
+              <hr>
+              <ul class="section__job-info__ul">
+                <li class="section__job-info__ul__li">
+                  <strong>Área de atuação</strong><br/>
+                  <%= @job.category.title %>
+                </li>
+                <li class="section__job-info__ul__li">
+                  <strong>Regime de contratação</strong><br>
+                  <%= @job.job_type.title %>
+                </li>
+
+                <% if @job.salary.present? %>
+                  <li class="section__job-info__ul__li">
+                    <strong>Localização</strong><br>
+                    <%= @job.location %>
+                  </li>
+                <% end %>
+
+                <% if @job.salary.present? %>
+                  <li class="section__job-info__ul__li">
+                    <strong>Salário</strong><br>
+                    <%= @job.salary %>
+                  </li>
+                <% end %>
+              </ul>
+
+              <% if @job.how_to_apply.present? %>
+                <hr>
+                <strong>Como se inscrever</strong>
+                <p><%= @job.how_to_apply.html_safe %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

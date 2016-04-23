@@ -1,0 +1,53 @@
+@import "show_job";
+@import "new_job";
+
+.goto_step3{
+  display: none;
+}
+.jobs_new{
+
+}
+
+.section__job-row{
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  float: left;
+  width: 100%;
+  clear: both;
+  &__icon{
+    padding-top: 17px;
+    &__holder{
+      background-color: $accent-color;
+      border-radius: 50%;
+      text-align: center;
+      height: 60px;
+      width: 60px;
+      padding-top: 19px;
+      i{
+        color: #FFF;
+        font-size: 1.6em;
+      }
+    }
+  }
+  &__body{
+    &__title{
+      h2{
+        font-size: 24px;
+        a{
+          color: $body !important;
+          font-weight: 600 !important;
+        }
+      }
+    }
+    &__footer{
+      &__tag{
+      }
+    }
+  }
+  &__meta{
+    text-align: right;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
