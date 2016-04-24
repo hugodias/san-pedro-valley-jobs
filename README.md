@@ -8,6 +8,8 @@ Este é o repositório do novo Job Board de [San Pedro Valley](http://jobs.sanpe
 Veja funcionando em [sanpedrovalleyjobs.herokuapp.com](https://sanpedrovalleyjobs.herokuapp.com)
 
 
+[![Join the chat at https://gitter.im/hugodias/san-pedro-valley-jobs](https://badges.gitter.im/hugodias/san-pedro-valley-jobs.svg)](https://gitter.im/hugodias/san-pedro-valley-jobs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Requerimentos
 
 - Ruby 2.3.0
@@ -32,6 +34,9 @@ A busca de jobs é realizada utilizando o `elasticsearch` e os e-mail são envia
 Um usuário adminstrador é criado ao rodar o seed com `rake db:seed`- Não se esqueça de fazer o passo 4 do guia abaixo para funcionar.
 
 
+## Discussões [![Join the chat at https://gitter.im/hugodias/san-pedro-valley-jobs](https://badges.gitter.im/hugodias/san-pedro-valley-jobs.svg)](https://gitter.im/hugodias/san-pedro-valley-jobs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+Para discussões relacionadas ao projeto, é utilizado o [gitter](https://gitter.im/hugodias/san-pedro-valley-jobs) que disponibiliza um chat em tempo real.
 
 ## Começando
 
