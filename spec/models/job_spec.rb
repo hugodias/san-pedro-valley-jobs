@@ -37,15 +37,6 @@ describe Job do
 
         expect(@job.pending?).to be true
       end
-
-      it "should be able to request a review" do
-        @job = FactoryGirl.build(:job)
-        @job.save
-
-        @job.review
-
-        expect(@job.pending?).to be true
-      end
     end
     context "when updating" do
       it "can only be published by adminstrators" do

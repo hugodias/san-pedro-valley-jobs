@@ -105,9 +105,7 @@ Não se esqueça de habilitar ao menos 1 worker no painel do heroku para que o s
 
 Quer ajudar? Excelente! O primeiro passo é procurar issues [com a tag help wanted no github](https://github.com/hugodias/san-pedro-valley-jobs/labels/help%20wanted).
 
-Não tem nada lá? Não tem problema, porque como você sabe, [Software has bugs. This is normal](https://m.signalvnoise.com/software-has-bugs-this-is-normal-f64761a262ca#.9e469ys8y), então com certeza existe algum bug a ser corrigido.
-
-Encontrou um Bug? *A casa é sua, fique a vontade, a geladeira é ali ó*.
+Não tem nada lá? Não tem problema, porque como você sabe, [Software has bugs. This is normal](https://m.signalvnoise.com/software-has-bugs-this-is-normal-f64761a262ca#.9e469ys8y). Encontrou um Bug? *A casa é sua, fique a vontade, a geladeira é ali ó*.
 
 Se quiser enviar um pull request, por favor faça-o na branch `dev`.
 

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="section__job-header">
       <h1 class="section__job-header__title">
-        <%= fa_icon 'camera-retro' %>
+        <%= icon_by_category(@job.category.title, '1x') %>
         <%= @job.title %>
       </h1>
       <h5>

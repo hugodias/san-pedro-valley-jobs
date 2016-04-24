@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :job_type do
-    title "MyString"
-    slug "MyString"
+    title "Full-time"
+    slug "full-time"
   end
 end
