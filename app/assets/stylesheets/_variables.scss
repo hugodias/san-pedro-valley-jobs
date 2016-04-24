@@ -9,7 +9,10 @@ $primary-color-dark:   #D32F2F;
 $primary-color:        #F44336;
 $primary-color-light:  #FFCDD2;
 $primary-color-text:   #FFFFFF;
-$accent-color:         #03A9F4;
+$accent-color:         #2196F3;
 $primary-text-color:   #212121;
 $secondary-text-color: #727272;
 $divider-color:        #B6B6B6;
+
+$nprogress-color: $accent-color;
+$nprogress-zindex: 10100;

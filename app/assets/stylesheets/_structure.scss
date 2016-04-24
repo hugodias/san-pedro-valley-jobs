@@ -14,8 +14,17 @@ a.navbar-brand{
   li{
     a{
       color: $primary-color-text;
+      &:hover,
+      &:active,
+      &:focus{
+        background: transparent;
+      }
     }
   }
+}
+
+#nprogress .bar{
+  background: $accent-color;
 }
 
 .section__colored-top{
