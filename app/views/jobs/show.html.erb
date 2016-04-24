@@ -6,7 +6,8 @@
         <%= @job.title %>
       </h1>
       <h5>
-        Postado a <%= relative_date(@job.updated_at) %>
+        Postado a
+        <%= relative_date(@job.updated_at) %>
       </h5>
     </div>
   </div>
@@ -30,8 +31,8 @@
                   <%= link_to fa_icon('building', text: @job.company.title), company_path(@job.company) %>
                 </h4>
                 <% if @job.company.website.present? %>
-                  <small class="section__job-info__link">
-                    <%= link_to fa_icon('external-link', text: 'Website'), @job.company.website, target: '_blank' %></small>
+                <small class="section__job-info__link">
+                  <%= link_to fa_icon('external-link', text: 'Website'), @job.company.website, target: '_blank' %></small>
                 <% end %>
               </p>
               <hr>
@@ -46,24 +47,24 @@
                 </li>
 
                 <% if @job.salary.present? %>
-                  <li class="section__job-info__ul__li">
-                    <strong>Localização</strong><br>
-                    <%= @job.location %>
-                  </li>
+                <li class="section__job-info__ul__li">
+                  <strong>Localização</strong><br>
+                  <%= @job.location %>
+                </li>
                 <% end %>
 
                 <% if @job.salary.present? %>
-                  <li class="section__job-info__ul__li">
-                    <strong>Salário</strong><br>
-                    <%= @job.salary %>
-                  </li>
+                <li class="section__job-info__ul__li">
+                  <strong>Salário</strong><br>
+                  <%= @job.salary %>
+                </li>
                 <% end %>
               </ul>
 
               <% if @job.how_to_apply.present? %>
-                <hr>
-                <strong>Como se inscrever</strong>
-                <p><%= @job.how_to_apply.html_safe %></p>
+              <hr>
+              <strong>Como se inscrever</strong>
+              <p><%= @job.how_to_apply.html_safe %></p>
               <% end %>
             </div>
           </div>
