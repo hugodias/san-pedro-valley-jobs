@@ -118,3 +118,7 @@ Se quiser enviar um pull request, por favor faça-o na branch `dev`.
 * `dev` contém as funcionalidades que estão em desenvolvimento.
 
 Tenha certeza que sua pull-request está bem testada, de preferência com testes unitários e de integração (Veja a pasta specs/features)
+
+## Garantia da Qualidade [![Code Climate](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs/badges/gpa.svg)](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs)
+
+Para garantir a qualidade, é utilizado um guia de estilos, boas práticas e má praticas. Essa garantia é monitorada pelo [Code Climate](https://codeclimate.com) e pelo [houndci](http://houndci.com). O Code Climate checa por má práticas de programação em relação a estrutura do código enquanto que o Houndci checa má práticas na sintaxe do código, isto é, se a leitura do mesmo não é demasiada complicada.
