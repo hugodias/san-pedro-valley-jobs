@@ -34,5 +34,21 @@ module Sanpedrovalleyjobs
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.action_mailer.smtp_settings = {
+      address: ENV['MAILGUN_SMTP_SERVER'],
+      port: 587,
+      domain: ENV['MAILGUN_DOMAIN'],
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV['MAILGUN_SMTP_LOGIN'],
+      password: ENV['MAILGUN_SMTP_PASSWORD']
+    }
+
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.default_url_options = {
+      host: ENV['DOMAIN_NAME']
+    }
   end
 end

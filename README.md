@@ -19,9 +19,9 @@ Veja funcionando em [sanpedrovalleyjobs.herokuapp.com](https://sanpedrovalleyjob
 
 ## Como funciona
 
-Qual pessoa pode cadastrar um **job** no aplicativo, porém apenas adminstradores podem aprovar ou reprovar um job.
+Qualquer pessoa pode cadastrar um **job** no aplicativo, porém apenas adminstradores podem aprovar ou reprovar um job.
 
-Ao cadastrar um JOB, o adminstrador recebe um e-mail com dois links: Aprovar ou Reprovar, e os dados do job no corpo do e-mail.
+Ao cadastrar um **job**, o adminstrador recebe um e-mail com dois links: Aprovar ou Reprovar, e os dados do job no corpo do e-mail.
 
 O adminstrador poderá também aprovar, reprovar e remover jobs no dashboard dentro da plataforma, protegida por login. Utilizamos o `devise` para authenticação.
 
@@ -60,13 +60,16 @@ Pré-requisitos: Instale o [Elasticsearch](https://www.elastic.co/products/elast
 ````
 RACK_ENV=development
 PORT=3000
-ELASTICSEARCH_URL=http://localhost:9200
 ADMIN_NAME=Seu Nome
 ADMIN_EMAIL=seu.email@gmail.com
 ADMIN_PASSWORD=suasenha
-MAILGUN_DOMAIN=xxxxxxxxx
-MAILGUN_USERNAME=xxxxxxxx
-MAILGUN_PASSWORD=xxxxxxxx
+ELASTICSEARCH_URL=http://localhost:9200
+MAILGUN_DOMAIN=XXXXXXXXXX
+MAILGUN_SMTP_LOGIN=XXXXXXXXX
+MAILGUN_SMTP_PASSWORD=XXXXXXXXX
+MAILGUN_SMTP_SERVER=smtp.mailgun.org
+DEFAULT_FROM=XXXXXXXXX
+DOMAIN_NAME=localhost:3000
 ````
 
 5. Crie as tabelas:
