@@ -103,19 +103,15 @@ Não se esqueça de habilitar ao menos 1 worker no painel do heroku para que o s
 
 ## Contribuindo
 
+Quer ajudar? Excelente! O primeiro passo é procurar issues [com a tag help wanted no github](https://github.com/hugodias/san-pedro-valley-jobs/labels/help%20wanted).
+
+Não tem nada lá? Não tem problema, porque como você sabe, [Software has bugs. This is normal](https://m.signalvnoise.com/software-has-bugs-this-is-normal-f64761a262ca#.9e469ys8y), então com certeza existe algum bug a ser corrigido.
+
+Encontrou um Bug? *A casa é sua, fique a vontade, a geladeira é ali ó*.
+
 Se quiser enviar um pull request, por favor faça-o na branch `dev`.
 
 * `master` contém a versão estável do projeto.
 * `dev` contém as funcionalidades que estão em desenvolvimento.
 
 Tenha certeza que sua pull-request está bem testada, de preferência com testes unitários e de integração (Veja a pasta specs/features)
-
-## O que precisa ser feito?
-* Encontrar uma maneira eficiente de consultar as startups cadastradas no [SPV](http://sanpedrovalley.org) e atualizar o BD;
-* Criar a página para visualizar uma startup e seus jobs;
-* Criar dashboard para adminstradores aprovarem/reprovarem as vagas;
-* Criar um arquivo completo com padrões de contribuição para o repositório (CONTRIBUTING.md);
-* Criar um guia de boas práticas para o cadastro das vagas;
-* Criar a página "Sobre o SPV Jobs";
-* Criar feature tests;
-* Mostrar jobs relacionados dentro de um determinado job (https://github.com/ankane/searchkick#similar-items);
