@@ -10,14 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require 1st_load_framework
  *= require trix
  *= require chosen
  *= require font-awesome
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
  @import "variables";
+ @import "mq";
+ @import "theme";
  @import 'nprogress';
  @import 'nprogress-bootstrap';
- @import "structure";
  @import "jobs";
