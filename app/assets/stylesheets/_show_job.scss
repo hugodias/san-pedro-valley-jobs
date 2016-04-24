@@ -1,34 +1,34 @@
-.section__job{
-  &-header{
+.section__job {
+  &-header {
     padding-bottom: 40px;
     padding-top: 80px;
-    &__title{
+    &__title {
       color: darken($primary-color-dark, 25);
       font-weight: bold;
     }
   }
-  &-description{
-    h2{
+  &-description {
+    h2 {
       margin-bottom: 30px;
     }
   }
-  &-company{
+  &-company {
     margin-top: 50px;
   }
-  &-info{
-    &__ul{
-      padding: 0px;
+  &-info {
+    &__ul {
+      padding: 0;
       margin: 0;
-      &__li{
+      &__li {
         list-style: none;
         margin-bottom: 15px;
       }
     }
-    &__title{
+    &__title {
       margin: 0;
     }
-    &__link{
-      a{
+    &__link {
+      a {
         font-size: 13px;
         color: $primary-text-color !important;
       }
