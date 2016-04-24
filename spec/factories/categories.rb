@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :category do
-    title "MyString"
-    slug "MyString"
+    title "Desenvolvimento"
+    slug "desenvolvimento"
   end
 end
