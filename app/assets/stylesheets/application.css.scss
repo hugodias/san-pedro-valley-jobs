@@ -14,10 +14,10 @@
  *= require trix
  *= require chosen
  *= require font-awesome
- *= require nprogress
- *= require nprogress-bootstrap
  *= require_self
  */
  @import "variables";
+ @import 'nprogress';
+ @import 'nprogress-bootstrap';
  @import "structure";
  @import "jobs";
