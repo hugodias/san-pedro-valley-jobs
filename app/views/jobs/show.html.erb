@@ -19,7 +19,7 @@
         <div class="col-sm-8">
           <div class="section__job-description">
             <h2>Descrição da vaga</h2>
-            <%= @job.description.html_safe %>
+            <%= sanitize @job.description, :tags => %w(strong a i p br ul li div) %>
           </div>
         </div>
         <div class="col-sm-4">
