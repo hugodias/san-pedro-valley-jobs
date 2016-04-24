@@ -26,7 +26,6 @@ gem 'simple_form'
 gem 'chosen-rails'
 gem 'trix'
 gem 'nprogress-rails'
-gem 'therubyracer', :platform=>:ruby
 gem 'kaminari'
 gem 'searchkick'
 gem 'mailgun_rails'

@@ -1,60 +1,59 @@
 @import "show_job";
 @import "new_job";
-
-.goto_step3{
-  display: none;
+.goto_step3 {
+    display: none;
 }
-
-.btn-search{
-  background-color: $primary-color-text;
-  color: $primary-color-dark;
-  padding: 5px 40px;
-  font-size: 15px;
-  height: auto;
-  float: right;
-  margin-top: 0;
+.btn-search {
+    background-color: $primary-color-text;
+    color: $primary-color-dark;
+    padding: 5px 40px;
+    font-size: 15px;
+    height: auto;
+    float: right;
+    margin-top: 0;
 }
-
-.section__job-row{
-  border-bottom: 1px solid #EEE;
-  margin-bottom: 20px;
-  padding-bottom: 30px;
-  float: left;
-  width: 100%;
-  clear: both;
-  &__icon{
-    padding-top: 17px;
-    &__holder{
-      background-color: $accent-color;
-      border-radius: 50%;
-      text-align: center;
-      height: 60px;
-      width: 60px;
-      padding-top: 19px;
-      i{
-        color: #FFF;
-        font-size: 1.6em;
-      }
-    }
-  }
-  &__body{
-    &__title{
-      h2{
-        font-size: 24px;
-        a{
-          color: $body !important;
-          font-weight: 600 !important;
+.job {
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    float: left;
+    width: 100%;
+    clear: both;
+    &__icon {
+        padding-top: 17px;
+        &__holder {
+            background-color: $accent-color;
+            border-radius: 50%;
+            text-align: center;
+            height: 60px;
+            width: 60px;
+            padding-top: 19px;
+            i {
+                color: #FFF;
+                font-size: 1.6em;
+            }
         }
-      }
     }
-    &__footer{
-      &__tag{
-      }
+    &__body {
+        &__title {
+            h2 {
+                font-size: 24px;
+                a {
+                    color: $body !important;
+                    font-weight: 600 !important;
+                }
+            }
+        }
+        &__footer {
+            &__tag {}
+        }
     }
-  }
-  &__meta{
-    text-align: right;
-    font-size: 13px;
-    font-weight: 600;
-  }
+    &__meta {
+        text-align: right;
+        font-size: 13px;
+        font-weight: 600;
+        @include mq($from: mobile, $until: tablet) {
+            text-align: left;
+        }
+    }
 }
