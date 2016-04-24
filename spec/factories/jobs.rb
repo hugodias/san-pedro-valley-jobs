@@ -1,6 +1,8 @@
 FactoryGirl.define do
+  sequence(:title) { |n| "Example title #{n}" }
+
   factory :job do
-    title Faker::Name.name
+    title
     salary "R$ #{Faker::Commerce.price}"
     location Faker::Address.city
     description Faker::Lorem.paragraph(4)
