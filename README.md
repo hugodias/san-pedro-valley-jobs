@@ -91,8 +91,12 @@ MAILGUN_PASSWORD=xxxxxxxx
 
 A aplicação já está preparada para para fazer o deploy para o heroku sem nenhuma alteração adicional.
 
-Addons
+Addons necessários no heroku:
+* Bonsai Elasticsearch (Ou algum outro de Elasticsearch)
+* Postgres
+* Redis To Go (Para o sidekiq)
 
+Não se esqueça de habilitar ao menos 1 worker no painel do heroku para que o sidekiq funcione corretamente.
 
 ## Contribuindo
 
