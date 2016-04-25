@@ -18,6 +18,7 @@ class Job < ActiveRecord::Base
   validates :company, presence: true
   validates :author, presence: true
   validates :author_email, presence: true
+  validates :link, :format => URI::regexp(%w(http https)), allow_blank: true
 
   enum status: [:pending, :published, :reproved, :removed]
 

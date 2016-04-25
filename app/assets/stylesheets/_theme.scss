@@ -1,132 +1,173 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #F4F3EF;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  letter-spacing: -0.01em;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
+  letter-spacing: -.01em;
+  background-color: $body;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
-input::-webkit-input-placeholder {
-  color: $primary-color-dark !important;
+
+:-ms-input-placeholder {
+  color: $primary-color-dark;
 }
-input:-moz-placeholder {
-  color: $primary-color-dark !important;
+
+::-moz-placeholder {
+  color: $primary-color-dark;
 }
-input::-moz-placeholder {
-  color: $primary-color-dark !important;
+
+.form-control::-webkit-input-placeholder {
+  color: $primary-color-dark;
 }
-input:-ms-input-placeholder {
-  color: $primary-color-dark !important;
+
+.form-control::placeholder {
+  color: $primary-color-dark;
 }
+
 a {
   color: $primary-color;
-  &:active,
-  &:focus,
+
   &:hover,
-  &:visited {
+  &:active,
+  &:focus {
     color: $primary-color;
     text-decoration: none;
   }
 }
+
 .color-primary {
   color: $primary-color;
 }
+
 .color-darken-primary-dark {
   color: darken($primary-color-dark, 25);
 }
+
 .btn {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
-  border: none;
-  border-radius: 2px;
-  text-transform: uppercase;
-  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  height: 36px;
-  min-width: 64px;
-  padding: 0 16px;
-  display: inline-block;
-  letter-spacing: 0;
   line-height: 36px;
-  vertical-align: middle;
+  display: inline-block;
+  min-width: 64px;
+  height: 36px;
+  padding: 0 16px;
   text-align: center;
+  vertical-align: middle;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+                0 3px 1px -2px rgba(0, 0, 0, .2),
+                0 1px 5px 0 rgba(0, 0, 0, .12);
 }
+
 .btn-primary {
   background-color: $accent-color;
-  color: $primary-color-text;
   border-color: $accent-color;
+  color: $primary-color-text;
+
   &:hover {
-    background-color: darken($accent-color,5);
+    background-color: darken($accent-color, 5);
   }
 }
+
+.btn-flat {
+  box-shadow: none;
+  color: $accent-color;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
 h3 {
   font-size: 20px;
-  line-height: 32px;
   font-weight: 400;
+  line-height: 32px;
 }
+
 .card {
-  border-radius: 6px;
-  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5);
   position: relative;
-  background: #fff;
   display: block;
-  color: rgba(0,0,0,0.7);
   margin-bottom: 60px;
+  color: rgba(0, 0, 0, .7);
+  border-radius: 6px;
+  background: $primary-color-text;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, .5);
+
   &-content {
     padding: 32px 40px;
+
     @include mq($from: mobile, $until: tablet) {
       padding: 10px 20px;
     }
+
     &--editor {
       padding: 10px 0 0;
     }
   }
 }
+
 .well {
-  padding: 32px 20px 24px 25px;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: #EAEDFF;
-  border-radius: 0;
+  padding: 32px 20px 24px 25px;
   border: 0;
+  border-radius: 0;
+  background-color: $well-bg-color;
   box-shadow: none;
-  * {
+
+  p,
+  li {
+    color: $well-text-color;
     font-size: 16px;
     line-height: 20px;
-    font-height: 600;
-    color: #484B5D;
   }
+
   hr {
-    border-color: darken(#EAEDFF, 5);
+    border-color: darken($well-bg-color, 5);
   }
 }
+
 .help-block {
   font-size: 13px;
 }
-a.navbar-brand {
+
+.navbar-brand {
   color: $primary-color-text;
-  font-weight: bold;
   font-size: 20px;
+  font-weight: bold;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $primary-color-text;
+  }
 }
+
 .navbar {
+  margin-bottom: 0;
   border-radius: 0;
   background-color: $primary-color-dark;
-  margin-bottom: 0;
+
   &-toggle {
+    margin-top: 3px;
     margin-bottom: 0;
     padding: 7px 10px 0;
-    margin-top: 3px;
+
     i {
       color: $primary-color-text;
     }
   }
 }
+
 .navbar-nav {
   li {
     a {
       color: $primary-color-text;
+
       &:active,
       &:focus,
       &:hover {
@@ -135,81 +176,99 @@ a.navbar-brand {
     }
   }
 }
+
 #nprogress .bar {
   background: $accent-color;
 }
+
 .section__colored-top {
+
   &:before {
-    content: " ";
     position: absolute;
+    z-index: -1;
     top: 52px;
     left: 0;
     width: 100%;
     height: 270px;
+    content: ' ';
     background-color: $primary-color;
-    z-index: -1;
   }
+
   &--padding-top {
     &:before {
       height: 345px;
     }
   }
+
   &__form {
     margin-top: 85px;
     padding-bottom: 30px;
+
     .form-group {
-      width: 85%;
       float: left;
+      width: 85%;
       margin-left: 20px;
+
       @include mq($from: mobile, $until: tablet) {
-        margin-left: 10px;
         float: right;
+        margin-left: 10px;
       }
+
       input[type=text].form-control {
-        background: transparent;
-        height: 50px;
         font-size: 35px;
         line-height: 40px;
-        color: $primary-color-text;
-        box-shadow: none;
-        padding-left: 0;
+        height: 50px;
         margin-top: 0;
+        padding-left: 0;
+        color: $primary-color-text;
         border: 0;
         border-bottom: 2px solid $primary-color-dark;
         border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+
         &:focus {
           outline: none;
         }
       }
     }
+
     i {
       color: $primary-color-dark;
       float: left;
+
       @include mq($from: mobile, $until: tablet) {
         font-size: 2em;
         margin-top: 10px;
       }
     }
+
     .btn-white {
       margin-top: 20px;
     }
   }
 }
+
 .pagination {
+
   li {
+
     a {
-      background: transparent;
-      border: none;
-      color: #545454;
-      font-weight: 600;
       font-family: Roboto;
+      font-weight: 600;
+      color: #545454;
+      border: 0;
+      background: transparent;
     }
+
     &.active {
+
       a {
         background-color: $primary;
-        color: $primary-color-text;
         border-radius: 4px;
+        color: $primary-color-text;
       }
+
       &:hover {
         a {
           color: $primary;
@@ -217,9 +276,8 @@ a.navbar-brand {
         }
       }
     }
-    &:active,
-    &:hover,
-    &:visited {
+
+    &:active, &:hover, &:visited {
       a {
         color: $primary;
       }

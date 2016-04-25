@@ -1,38 +1,62 @@
-.jobs_new {
+.jobs-new {
   min-height: 1600px;
+
   .step1 {
     margin-top: 60px;
   }
+
   .step2,
   .step3 {
     display: none;
   }
 }
-.section__form-job {
+
+.jobs-new,
+.jobs-create {
+  
+  .step3 {
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.form-job {
   padding-bottom: 100px;
+
   .step2 {
     margin-top: 60px;
   }
-  .goto_step3 {
+
+  .goto-step3 {
     display: inline-block;
   }
+
   h3 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
   }
+
   .icon-align {
     float: right;
-    margin-top: 75px;
     margin-right: 50px;
+    margin-top: 75px;
   }
 }
+
 trix-editor {
-  min-height: 200px;
-  border-radius: 0;
   border: 0;
-  border-top: 1px solid #DDD;
+  border-radius: 0;
+  border-top: 1px solid $gray;
+  min-height: 200px;
 }
+
 trix-toolbar {
   padding: 5px 15px;
 }

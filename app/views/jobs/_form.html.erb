@@ -1,4 +1,4 @@
-<div class="section__form-job">
+<div class="form-job">
 
     <%= simple_form_for(@job) do |f| %>
 
@@ -70,10 +70,19 @@
                     <%= f.input :salary, label: 'Salário' %>
                   </div>
                 </div>
+                <hr>
+                <div class="row">
+                  <div class="col-md-12">
+                    <%= f.input :link, label: 'Link em outra plataforma', hint: 'Esta vaga já está publicada em alguma outra plataforma como recruiterbox ou recuitee? Coloque o link aqui.' %>
+                  </div>
+                </div>
               </div>
             </div>
 
             <h3>Descrição da vaga</h3>
+            <p>
+              Conte um pouco sobre a vaga, os requerimentos para se inscrever, qualidades desejaveis, benefícios, etc...
+            </p>
             <div class="card">
               <div class="card-content card-content--editor">
                 <%= f.trix_editor :description %>
@@ -81,6 +90,9 @@
             </div>
 
             <h3>Como as pessoas se aplicam para esta vaga?</h3>
+            <p>
+              Caso tenha informado o link para a vaga em uma outra plataforma, não é necessário preencher este campo.
+            </p>
             <div class="card">
               <div class="card-content card-content--editor">
                 <%= f.trix_editor :how_to_apply %>

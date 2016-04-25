@@ -26,6 +26,15 @@ describe Job do
         @job.valid?
         expect(@job.errors[:company]).to include("não pode ficar em branco")
       end
+
+      it "cannot be saved with a wrong link" do
+        @job = FactoryGirl.build(:job, link: 'Foobar')
+        @job.valid?
+        expect(@job.errors[:link]).to include("não é válido")
+
+        @job.link = Faker::Internet.url
+        expect(@job.valid?).to be true
+      end
     end
   end
 

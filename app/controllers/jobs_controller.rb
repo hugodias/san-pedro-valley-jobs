@@ -56,7 +56,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :salary, :location, :description, :company_id, :category_id, :job_type_id, :how_to_apply, :author, :author_email)
+    params.require(:job).permit(:title, :salary, :location, :description, :link, :company_id, :category_id, :job_type_id, :how_to_apply, :author, :author_email)
   end
 
   def check_token

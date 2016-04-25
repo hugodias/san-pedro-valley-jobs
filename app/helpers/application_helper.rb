@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def curr_page
-    "#{params[:controller]}_#{params[:action]}"
+    "#{params[:controller]}-#{params[:action]}"
   end
 
   def relative_date(date)

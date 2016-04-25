@@ -18,4 +18,15 @@ feature 'Job page' do
     expect(page).to have_content job.salary
     expect(page).to have_content job.location
   end
+
+  # Scenario: The visitor should not see how to apply section when the job has a link
+  #   Given I am a visitor
+  #   When I visit a job with an external link
+  #   Then I see the link but I don't see the how to apply section
+  scenario 'visitor sees a job that has link published' do
+    job = FactoryGirl.create(:job, status: 'published', link: Faker::Internet.url, how_to_apply: 'Teste')
+    visit company_job_path(job.company, job)
+    expect(page).to have_content 'Candidatar'
+    expect(page).to have_no_content job.how_to_apply
+  end
 end
