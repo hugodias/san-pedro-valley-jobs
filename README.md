@@ -12,6 +12,8 @@ Veja funcionando em [sanpedrovalleyjobs.herokuapp.com](https://sanpedrovalleyjob
 
 ## Requerimentos
 
+[![Join the chat at https://gitter.im/hugodias/san-pedro-valley-jobs](https://badges.gitter.im/hugodias/san-pedro-valley-jobs.svg)](https://gitter.im/hugodias/san-pedro-valley-jobs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 - Ruby 2.3.0
 - Rails 4.2.5.2
 - Elasticsearch (Searchkick)
