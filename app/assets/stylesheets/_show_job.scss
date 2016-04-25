@@ -32,12 +32,22 @@
     }
 
     &__title {
+      color: $well-text-color;
+      font-weight: bold;
       margin: 0;
+
+      &:hover {
+        color: $well-text-color;
+      }
     }
 
     &__link {
-      color: $primary-text-color;
-      font-size: 13px;
+      box-shadow: none;
+      color: $well-text-color;
+      font-weight: bold;
+      &:hover {
+        background: darken($well-bg-color, 5);
+      }
     }
   }
 }

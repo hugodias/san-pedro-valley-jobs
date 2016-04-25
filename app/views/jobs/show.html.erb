@@ -27,14 +27,9 @@
           <div class="section-job__info">
             <div class="well">
               <p>
-                <h4 class="section-job__info__title">
-                  <%= link_to fa_icon('building', text: @job.company.title), company_path(@job.company) %>
+                <h4>
+                  <%= link_to fa_icon('building', text: @job.company.title), company_path(@job.company), class: 'section-job__info__title' %>
                 </h4>
-                <% if @job.company.website.present? %>
-                <small>
-                  <%= link_to fa_icon('external-link', text: 'Website'), @job.company.website, target: '_blank', class: 'section-job__info__link' %>
-                </small>
-                <% end %>
               </p>
               <hr>
               <ul class="section-job__info__ul">
@@ -62,10 +57,13 @@
                 <% end %>
               </ul>
 
-              <% if @job.how_to_apply.present? %>
-              <hr>
-              <strong>Como se inscrever</strong>
-              <p><%= @job.how_to_apply.html_safe %></p>
+              <% if @job.link.present? %>
+                <hr>
+                <%= link_to 'Candidatar', @job.link, target: '_blank', class: 'btn section-job__info__link' %>
+              <% elsif @job.how_to_apply.present? %>
+                <hr>
+                <strong>Como se inscrever</strong>
+                <p><%= @job.how_to_apply.html_safe %></p>
               <% end %>
             </div>
           </div>

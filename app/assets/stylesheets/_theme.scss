@@ -74,6 +74,14 @@ a {
   }
 }
 
+.btn-flat {
+  box-shadow: none;
+  color: $accent-color;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
 h3 {
   font-size: 20px;
   font-weight: 400;
@@ -108,18 +116,18 @@ h3 {
   padding: 32px 20px 24px 25px;
   border: 0;
   border-radius: 0;
-  background-color: #eaedff;
+  background-color: $well-bg-color;
   box-shadow: none;
 
-  * {
+  p,
+  li {
+    color: $well-text-color;
     font-size: 16px;
     line-height: 20px;
-    color: #484b5d;
-    font-height: 600;
   }
 
   hr {
-    border-color: darken(#eaedff, 5);
+    border-color: darken($well-bg-color, 5);
   }
 }
 
@@ -131,6 +139,12 @@ h3 {
   color: $primary-color-text;
   font-size: 20px;
   font-weight: bold;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $primary-color-text;
+  }
 }
 
 .navbar {
