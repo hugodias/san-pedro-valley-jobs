@@ -5,9 +5,7 @@
     </div>
   </div>
   <div class="job__body col-md-9 col-sm-9">
-    <div class="job__body__title">
-      <h2><%= link_to job.title, company_job_path(job.company, job) %></h2>
-    </div>
+    <h2><%= link_to job.title, company_job_path(job.company, job), class: 'job__body__title'%></h2>
     <div class="clearfix"></div>
     <div class="job__body__footer">
       <span class="job__body__footer__tag">

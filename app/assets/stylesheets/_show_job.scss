@@ -1,37 +1,43 @@
-.section__job {
-  &-header {
+.section-job {
+
+  &__header {
     padding-bottom: 40px;
     padding-top: 80px;
+
     &__title {
       color: darken($primary-color-dark, 25);
       font-weight: bold;
     }
   }
-  &-description {
+
+  &__description {
     h2 {
       margin-bottom: 30px;
     }
   }
-  &-company {
+
+  &__company {
     margin-top: 50px;
   }
-  &-info {
+
+  &__info {
     &__ul {
-      padding: 0;
       margin: 0;
-      &__li {
-        list-style: none;
-        margin-bottom: 15px;
-      }
+      padding: 0;
     }
+
+    &__ul__li {
+      list-style: none;
+      margin-bottom: 15px;
+    }
+
     &__title {
       margin: 0;
     }
+
     &__link {
-      a {
-        font-size: 13px;
-        color: $primary-text-color !important;
-      }
+      color: $primary-text-color;
+      font-size: 13px;
     }
   }
 }
