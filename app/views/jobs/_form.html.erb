@@ -21,10 +21,10 @@
     <div class="step2">
       <div class="container">
         <div class="row">
-          <div class="col-sm-2">
+          <div class="col-sm-2 hidden-xs">
             <%= fa_icon 'user 3x', class: 'icon-align' %>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-8 col-xs-12">
             <h3>Informações do responsável</h3>
             <div class="card">
               <div class="card-content">
@@ -44,11 +44,14 @@
     <div class="step3">
       <div class="container">
         <div class="row">
-          <div class="col-sm-2">
+          <div class="col-sm-2 hidden-xs">
             <%= fa_icon 'info 3x', class: 'icon-align' %>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-8 col-xs-12">
             <h3>Informações sobre a vaga</h3>
+            <p>
+              Campos com * são obrigatórios. Quanto mais campos você preencher, mais fácil será de encontrar sua vaga.
+            </p>
             <div class="card">
               <div class="card-content">
                 <%= f.input :title, label: 'Titulo da vaga' %>
@@ -99,7 +102,7 @@
               </div>
             </div>
 
-            <%= f.button :submit, class: 'btn btn-primary', "data-disable-with": "Salvando..." %>
+            <%= f.button :submit, 'Publicar', class: 'btn btn-primary', "data-disable-with": "Salvando..." %>
           </div>
         </div>
       </div>
