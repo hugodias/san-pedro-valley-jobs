@@ -47,16 +47,16 @@
       color: $primary-text-color;
       font-size: 24px;
       font-weight: 600;
+    }
   }
 
-    &__meta {
-      font-size: 13px;
-      font-weight: 600;
-      text-align: right;
+  &__meta {
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
 
-      @include mq($from: mobile, $until: tablet) {
-        text-align: left;
-      }
+    @include mq($from: mobile, $until: tablet) {
+      text-align: left;
     }
   }
 }
