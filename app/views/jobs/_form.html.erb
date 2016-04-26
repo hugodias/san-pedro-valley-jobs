@@ -11,7 +11,7 @@
           <h3 class="color-darken-primary-dark">Cadastrar vaga</h3>
           <div class="card">
             <div class="card-content">
-              <%= f.association :company, label: 'Comece selecionando a startup', hint: 'A startup não aparece aqui? Cadastre gratuitamente em http://www.sanpedrovalley.org', input_html: { "data-placeholder": "Escolha uma Startup", autofocus: true} %>
+              <%= f.association :company, label: 'Comece selecionando a startup', hint: 'A startup não aparece aqui? Cadastre gratuitamente em http://www.sanpedrovalley.org', collection: Company.order('title ASC'), input_html: { "data-placeholder": "Escolha uma Startup", autofocus: true} %>
             </div>
           </div>
         </div>
