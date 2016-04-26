@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   default_url_options :host => Rails.application.secrets.domain_name
   require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   root to: 'jobs#index'
 
