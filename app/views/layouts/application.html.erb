@@ -2,8 +2,8 @@
   <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title><%= content_for?(:title) ? yield(:title) : "Sanpedrovalleyjobs" %></title>
-      <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sanpedrovalleyjobs" %>">
+      <title><%= content_for?(:title) ? "#{yield(:title)} - " : "" %>San Pedro Valley Jobs</title>
+      <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "San Pedro Valley Jobs" %>">
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900' rel='stylesheet' type='text/css'>
       <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
