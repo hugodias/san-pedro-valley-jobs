@@ -5,8 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+if User.all.empty?
+  user = CreateAdminService.new.call
+  puts 'CREATED ADMIN USER: ' << user.email
+end
 
 Category.create([
   {title: 'Design'},
