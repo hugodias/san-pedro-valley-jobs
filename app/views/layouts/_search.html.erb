@@ -1,8 +1,14 @@
-<div class="section__colored-top__form">
+<div class="section-colored-top__form search-form">
   <%= simple_form_for(:query, method: 'get') do |f| %>
   <div class="col-md-10">
     <%= fa_icon 'search 3x' %>
-    <%= f.input :q, label: false, autofocus: true, placeholder: 'Palavras chave, empresas, cidades', input_html: { autocomplete: "off", value: @query } %>
+    <%= f.input :q, label: false, autofocus: true, placeholder: 'Palavras chave, cargos, locais', input_html: { autocomplete: "off", value: @query } %>
+    <div class="clearfix"></div>
+    <span class="search-form__hint">Exemplos de buscas:
+      <a href="<%= root_url %>?query[q]=Photoshop" class="search-form__hint__link">Photoshop</a>,
+      <a href="<%= root_url %>?query[q]=Desenvolvedor" class="search-form__hint__link">Desenvolvedor</a>,
+      <a href="<%= root_url %>?query[q]=Savassi" class="search-form__hint__link">Savassi</a>,
+      <a href="<%= root_url %>?query[q]=Estágio" class="search-form__hint__link">Estágio</a></span>
   </div>
   <div class="col-md-2">
     <%= button_tag(type: 'submit', class: "btn btn-search") do %>

@@ -1,0 +1,23 @@
+<div class="section-colored-top">
+  <div class="container">
+    <div class="section-job__header">
+      <h1 class="section-job__header__title">
+        <%= @company.title %>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="card">
+        <div class="card-content">
+          <% @company.jobs.each do |job| %>
+            <%= render 'jobs/job_row', job: job %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

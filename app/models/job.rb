@@ -29,6 +29,8 @@ class Job < ActiveRecord::Base
       title: title,
       description: description,
       company_name: company.title,
+      job_type_name: job_type.title,
+      category_name: category.title,
       location: location,
       status: status
     }
@@ -48,7 +50,7 @@ class Job < ActiveRecord::Base
     else
       self.search query,
         where: {status: "published"},
-        fields: ['title^10', 'description', 'location', 'company_name'],
+        fields: ['title^10', 'description', 'location', 'company_name', 'job_type_name', 'category_name'],
         page: page,
         per_page: 10
     end
