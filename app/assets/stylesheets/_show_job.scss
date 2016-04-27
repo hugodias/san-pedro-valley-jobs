@@ -4,7 +4,8 @@
     padding-bottom: 40px;
     padding-top: 80px;
 
-    &__title {
+    &__title,
+    &__subtitle {
       color: darken($primary-color-dark, 25);
       font-weight: bold;
     }
