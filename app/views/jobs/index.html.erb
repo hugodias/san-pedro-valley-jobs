@@ -1,3 +1,7 @@
+<% if @query.present? %>
+  <% content_for(:title, "Resultados para #{@query}") %>
+<% end %>
+
 <div class="section-colored-top">
   <div class="container">
     <%= render 'layouts/search' %>
