@@ -12,6 +12,8 @@
           <% @jobs.each do |job| %>
             <%= render 'job_row', job: job %>
           <% end %>
+
+          <%= render 'job_no_results' if @jobs.count == 0 %>
         </div>
       </div>
 

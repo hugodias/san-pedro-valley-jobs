@@ -257,6 +257,21 @@ h3 {
         color: $primary-color-text;
       }
     }
+
+  }
+}
+
+.search-sugestions {
+  margin-top: 30px;
+
+  &__li {
+    &__link {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    &__link:hover{
+      color: $primary-color;
+    }
   }
 }
 
