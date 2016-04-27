@@ -249,6 +249,23 @@ h3 {
   }
 }
 
+.search-form {
+
+  &__hint {
+    color: $primary_color_text;
+
+    &__link {
+      color: $primary-color-text;
+      text-decoration: underline;
+      font-weight: bold;
+
+      &:hover {
+        color: $primary-color-text;
+      }
+    }
+  }
+}
+
 .pagination {
 
   li {
