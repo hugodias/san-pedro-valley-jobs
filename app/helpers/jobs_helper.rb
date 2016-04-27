@@ -22,6 +22,8 @@ module JobsHelper
       fa_icon "money #{size}"
     when 'Diversos'
       fa_icon "asterisk #{size}"
+    when 'Audiovisual e Fotografia'
+      fa_icon "camera #{size}"
     end
   end
 end
