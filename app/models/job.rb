@@ -1,6 +1,7 @@
 class Job < ActiveRecord::Base
   extend FriendlyId
   scope :published, -> { where(status: "published") }
+  scope :awaiting_approval, -> { where(status: "pending") }
 
   friendly_id :title, :use => [:scoped, :finders], :scope => :company
   searchkick language: "brazilian"

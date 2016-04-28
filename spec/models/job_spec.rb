@@ -74,4 +74,17 @@ describe Job do
       end
     end
   end
+
+  describe "retrieving" do
+    context "on dashboard" do
+      it "can retrieve jobs awaiting approval" do
+        FactoryGirl.create_list(:job, 5)
+        FactoryGirl.create_list(:job, 5, status: 1)
+
+        @jobs = Job.awaiting_approval
+
+        expect(@jobs.count).to eq(5)
+      end
+    end
+  end
 end
