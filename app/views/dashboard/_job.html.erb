@@ -4,6 +4,7 @@
   <td><%= job.category.title %></td>
   <td><%= job.job_type.title %></td>
   <td>
-    <%= link_to 'Aprovar', approve_job_company_job_path(job.company, job, job.token), class: 'link-accent' %>
+    <%= link_to 'Aprovar', approve_job_company_job_path(job.company, job, job.token), class: 'link-accent' %> |
+    <%= link_to 'Reprovar', reprove_job_company_job_path(job.company, job, job.token), class: 'link-accent' %>
   </td>
 </tr>
