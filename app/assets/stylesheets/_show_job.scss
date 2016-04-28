@@ -6,8 +6,12 @@
 
     &__title,
     &__subtitle {
-      color: darken($primary-color-dark, 25);
+      color: $primary-color-text;
       font-weight: bold;
+    }
+
+    &__subtitle {
+      color: $primary-subtitle-color;
     }
   }
 

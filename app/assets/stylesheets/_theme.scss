@@ -1,3 +1,8 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -5,6 +10,7 @@ body {
   line-height: 24px;
   letter-spacing: -.01em;
   background-color: $body;
+  margin-bottom: 90px;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
@@ -26,13 +32,18 @@ body {
 }
 
 a {
-  color: $primary-color;
+  color: $secondary-text-color;
 
   &:hover,
   &:active,
   &:focus {
-    color: $primary-color;
+    color: $accent-color;
     text-decoration: none;
+  }
+
+  &.link-accent {
+    color: $accent-color;
+    font-weight: bold;
   }
 }
 
@@ -41,7 +52,7 @@ a {
 }
 
 .color-darken-primary-dark {
-  color: darken($primary-color-dark, 25);
+  color: $primary-color-text;
 }
 
 .btn {
@@ -139,6 +150,7 @@ h3 {
   color: $primary-color-text;
   font-size: 20px;
   font-weight: bold;
+  padding: 0;
 
   &:hover,
   &:active,
@@ -167,6 +179,7 @@ h3 {
   li {
     a {
       color: $primary-color-text;
+      padding: 24px 10px;
 
       &:active,
       &:focus,
@@ -182,7 +195,6 @@ h3 {
 }
 
 .section-colored-top {
-
   &::before {
     background-color: $primary-color;
     content: ' ';
@@ -195,8 +207,8 @@ h3 {
   }
 
   &__form {
-    margin-top: 85px;
-    padding-bottom: 30px;
+    margin-top: 55px;
+    padding-bottom: 50px;
 
     .form-group {
       float: left;
@@ -244,7 +256,6 @@ h3 {
 }
 
 .search-form {
-
   &__hint {
     color: $primary_color_text;
 
@@ -252,10 +263,10 @@ h3 {
       color: $primary-color-text;
       text-decoration: underline;
       font-weight: bold;
+    }
 
-      &:hover {
-        color: $primary-color-text;
-      }
+    &__link:hover {
+      color: $primary-color-text;
     }
 
   }
@@ -269,16 +280,15 @@ h3 {
       font-weight: bold;
       text-decoration: underline;
     }
-    &__link:hover{
+
+    &__link:hover {
       color: $primary-color;
     }
   }
 }
 
 .pagination {
-
   li {
-
     a {
       font-family: Roboto;
       font-weight: 600;
@@ -287,26 +297,31 @@ h3 {
       background: transparent;
     }
 
-    &.active {
-
-      a {
-        background-color: $primary;
-        border-radius: 4px;
-        color: $primary-color-text;
-      }
-
-      &:hover {
-        a {
-          color: $primary;
-          background-color: $primary-color-text;
-        }
-      }
+    &.active a {
+      background-color: $accent-color;
+      border-radius: 4px;
+      color: $primary-color-text;
     }
 
-    &:active, &:hover, &:visited {
-      a {
-        color: $primary;
-      }
+    &.active:hover a {
+      background-color: $primary-color-text;
+      color: $accent-color;
+    }
+
+    &:active a,
+    &:hover a,
+    &:visited a {
+      color: $accent-color;
     }
   }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: $primary-color-text;
+  padding: 20px 0 10px;
 }

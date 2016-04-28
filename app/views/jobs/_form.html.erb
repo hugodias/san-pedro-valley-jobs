@@ -9,9 +9,13 @@
           <h3 class="color-darken-primary-dark">Cadastrar vaga</h3>
           <div class="card">
             <div class="card-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque alias aliquam eligendi magnam labore temporibus! Ut in facilis impedit, veritatis aperiam est mollitia fuga consectetur dolorem unde, explicabo magnam iure!</p>
-              <br>
-              <%= f.association :company, label: 'Comece selecionando a startup', hint: 'A startup não aparece aqui? Cadastre gratuitamente em http://www.sanpedrovalley.org', collection: Company.order('title ASC'), input_html: { "data-placeholder": "Escolha uma Startup", autofocus: true} %>
+              <p>O cadastro de vagas de emprego no <strong>San Pedro Valley Jobs</strong> é totalmente gratuito, porém restrito às startups que fazem parte do site <a href="http://www.sanpedrovalley.org" class="link-accent" target="_blank">San Pedro Valley</a>.</p>
+
+              <p>Depois de cadastrar uma vaga, ela será analisada, e caso seja aprovada estará no site em poucos minutos.</p>
+
+              <p>Antes de publicar, leia o <a href="" class="link-accent" target="_blank">guia de boas práticas</a> para o cadastro de vagas.</p>
+              <hr>
+              <%= f.association :company, label: 'Comece selecionando a startup', hint: 'A startup não aparece aqui? Cadastre gratuitamente em http://www.sanpedrovalley.org', collection: Company.order('title ASC'), input_html: { "data-placeholder": "Escolha a Startup", autofocus: true} %>
             </div>
           </div>
         </div>

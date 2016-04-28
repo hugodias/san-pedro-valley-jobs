@@ -1,19 +1,20 @@
 $body: #f4f3ef;
 $gray: #eee;
-$primary: #f44336;
-$design: #00bbd3;
-$development: #3e50b4;
-$marketing: #b0bec5;
-$business: #546e7a;
-$primary-color-dark: #d32f2f;
-$primary-color: #f44336;
-$primary-color-light: #ffcdd2;
-$primary-color-text: #fff;
-$accent-color: #2196f3;
+
+$primary-subtitle-color: #b3e5fc;
+
+$primary-color-dark: #0288D1;
+$primary-color: #03A9F4;
+$primary-color-light: #B3E5FC;
+$primary-color-text: #FFFFFF;
+//$accent-color: lighten(#77C04B, 15);
+//$accent-color: #FF5252;
+$accent-color: #43CA6C;
 $primary-text-color: #212121;
 $secondary-text-color: #727272;
-$divider-color: #b6b6b6;
+$divider-color: #B6B6B6;
+
 $nprogress-color: $accent-color;
 $nprogress-zindex: 10100;
 $well-text-color: #484b5d;
-$well-bg-color: #eaedff;
+$well-bg-color: lighten($primary-color-light, 10);
