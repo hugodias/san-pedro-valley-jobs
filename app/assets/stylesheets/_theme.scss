@@ -198,10 +198,10 @@ h3 {
   &::before {
     background-color: $primary-color;
     content: ' ';
-    height: 270px;
+    height: 370px;
     left: 0;
     position: absolute;
-    top: 52px;
+    top: 0px;
     width: 100%;
     z-index: -1;
   }
@@ -324,4 +324,15 @@ footer {
   height: 60px;
   background-color: $primary-color-text;
   padding: 20px 0 10px;
+}
+
+.alert {
+  border-radius: 0;
+  margin-bottom: 0;
+
+  &.alert-success {
+    background-color: $accent-color;
+    border: 0;
+    color: $primary-color-text;
+  }
 }

@@ -10,7 +10,9 @@
       <%= csrf_meta_tags %>
     </head>
     <body class="<%= curr_page %>">
+      <%= render 'layouts/messages' %>
       <%= render 'layouts/navigation' %>
+      <div class="clearfix"></div>
      	<%= yield %>
       <footer class="footer">
         <div class="container">
