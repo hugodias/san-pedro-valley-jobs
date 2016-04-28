@@ -1,0 +1,60 @@
+<h1 class="page-header">Dashboard</h1>
+
+<div class="row stats">
+  <div class="col-xs-6 col-sm-3 stat">
+    <div class="card">
+      <div class="card-content">
+        <h4><%= @jobs.count %></h4>
+        <span class="text-muted">Jobs pendentes</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3 stat">
+    <div class="card">
+      <div class="card-content">
+        <h4><%= @published_jobs.count %></h4>
+        <span class="text-muted">Jobs aprovados</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3 stat">
+    <div class="card">
+      <div class="card-content">
+        <h4>X</h4>
+        <span class="text-muted">Startups cadastradas</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3 stat">
+    <div class="card">
+      <div class="card-content">
+
+        <h4>X</h4>
+        <span class="text-muted">?</span>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="sub-header"><%= fa_icon('warning', text: 'Jobs aguardando aprovação') %></h2>
+<div class="card">
+  <div class="card-content card-content--editor">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Startup</th>
+            <th>Vaga</th>
+            <th>Categoria</th>
+            <th>Regime de contratação</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @jobs.each do |job| %>
+            <%= render 'job', job: job %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
