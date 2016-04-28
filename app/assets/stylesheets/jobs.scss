@@ -48,6 +48,12 @@
       font-size: 24px;
       font-weight: 600;
     }
+
+    &__title:hover,
+    &__title:active,
+    &__title:focus {
+      color: lighten($primary-text-color, 20);
+    }
   }
 
   &__meta {
