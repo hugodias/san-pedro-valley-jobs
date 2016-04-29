@@ -206,6 +206,10 @@ h3 {
     z-index: -1;
   }
 
+  &--higher::before {
+    height: 470px;
+  }
+
   &__form {
     margin-top: 55px;
     padding-bottom: 50px;
