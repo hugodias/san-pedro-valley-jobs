@@ -1,5 +1,3 @@
-<h1 class="page-header">Dashboard</h1>
-
 <div class="row stats">
   <div class="col-xs-6 col-sm-3 stat">
     <div class="card">
@@ -35,26 +33,35 @@
     </div>
   </div>
 </div>
-<h2 class="sub-header"><%= fa_icon('warning', text: 'Jobs aguardando aprovação') %></h2>
+<h2 class="sub-header">Aguardando aprovação</h2>
+
 <div class="card">
   <div class="card-content card-content--editor">
     <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Startup</th>
-            <th>Vaga</th>
-            <th>Categoria</th>
-            <th>Regime de contratação</th>
-            <th>#</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @jobs.each do |job| %>
-            <%= render 'job', job: job %>
-          <% end %>
-        </tbody>
-      </table>
+      <% if @jobs.empty? %>
+      <div class="text-center empty">
+        <%= fa_icon('smile-o 4x') %>
+        <h3>Nenhum job para aprovar!</h3>
+      </div>
+
+      <% else %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Startup</th>
+              <th>Vaga</th>
+              <th>Categoria</th>
+              <th>Regime de contratação</th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @jobs.each do |job| %>
+              <%= render 'job', job: job %>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>

@@ -6,6 +6,14 @@
 
 .main {
   padding: 50px 20px;
+
+  .page-header {
+    margin-top: 0;
+  }
+
+  .sub-header {
+    margin-bottom: 30px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -13,9 +21,6 @@
     padding-right: 40px;
     padding-left: 40px;
   }
-}
-.main .page-header {
-  margin-top: 0;
 }
 
 .stats {

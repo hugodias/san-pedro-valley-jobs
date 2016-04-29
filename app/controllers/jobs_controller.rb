@@ -49,7 +49,7 @@ class JobsController < ApplicationController
       flash[:notice] = 'Vaga reprovada'
       # TODO: Enviar email para quem cadastrou
     end
-    redirect_to root_url
+    redirect_to dashboard_index_url
   end
 
   private
