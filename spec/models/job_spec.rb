@@ -77,13 +77,26 @@ describe Job do
 
   describe "retrieving" do
     context "on dashboard" do
+
+      it "can retrieve visible jobs" do
+        FactoryGirl.create_list(:job, 5)
+        FactoryGirl.create_list(:job, 5, status: "published")
+
+        @jobs = Job.visible
+        expect(@jobs.count).to eq(5)
+      end
+
       it "can retrieve jobs awaiting approval" do
         FactoryGirl.create_list(:job, 5)
         FactoryGirl.create_list(:job, 5, status: 1)
 
         @jobs = Job.awaiting_approval
-
         expect(@jobs.count).to eq(5)
+      end
+    end
+
+    context "searching" do
+      it "can search by name" do
       end
     end
   end
