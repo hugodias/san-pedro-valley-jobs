@@ -13,6 +13,10 @@
     &__subtitle {
       color: $primary-subtitle-color;
     }
+
+    &.pending {
+      padding-top: 40px;
+    }
   }
 
   &__description {
@@ -50,9 +54,45 @@
       box-shadow: none;
       color: $well-text-color;
       font-weight: bold;
+
       &:hover {
         background: darken($well-bg-color, 5);
       }
     }
+  }
+}
+
+.review-bar {
+  background-color: #0288D1;
+  padding: 0 0 30px;
+  color: #FFF;
+  border-top: 1px solid #0892DE;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    color: $primary-color-text;
+    margin: 0 15px;
+    font-weight: 600;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary-color-text;
+    }
+  }
+
+  &__btn--approve {
+    background-color: $accent-color;
+  }
+
+  &__btn--reprove {
+    background-color: $red;
   }
 }

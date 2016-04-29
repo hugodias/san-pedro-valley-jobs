@@ -1,8 +1,13 @@
 <% content_for(:title, "#{@job.title} - #{@job.company.title}") %>
 
-<div class="section-colored-top">
+<div class="section-colored-top <%= 'section-colored-top--higher' if @job.pending? %>">
+
+  <% if @job.pending? %>
+    <%= render 'review_bar', job: @job %>
+  <% end %>
+
   <div class="container">
-    <div class="section-job__header">
+    <div class="section-job__header <%= @job.status %>">
       <h1 class="section-job__header__title">
         <%= icon_by_category(@job.category.title, '1x') %>
         <%= @job.title %>

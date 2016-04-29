@@ -11,12 +11,12 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="<%= curr_page %>">
-    <%= render 'layouts/navigation_dashboard' %>
-    <div class="container-fluid">
+    <%= render 'layouts/messages' %>
+    <%= render 'layouts/navigation' %>
+    <div class="container">
       <div class="row">
-        <%= render 'layouts/sidebar_dashboard' %>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <%= render 'layouts/messages' %>
+        <div class="col-md-12 main">
+
           <%= yield %>
         </div>
       </div>
