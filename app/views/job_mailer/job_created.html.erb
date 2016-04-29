@@ -19,7 +19,7 @@
 
     <p>Depois de analisar cuidadosamente a vaga, você deseja
 
-      <strong><%= link_to 'Aprovar', approve_job_company_job_url(@job.company.slug, @job.slug, @job.token) %></strong> ou <strong><%= link_to 'Reprovar', reprove_job_company_job_url(@job.company.slug, @job.slug, @job.token) %></strong>
+      <strong><%= link_to 'Aprovar', approve_job_url(@job.company.slug, @job.slug, @job.token) %></strong> ou <strong><%= link_to 'Reprovar', reprove_job_url(@job.company.slug, @job.slug, @job.token) %></strong>
     </p>
   </body>
 </html>

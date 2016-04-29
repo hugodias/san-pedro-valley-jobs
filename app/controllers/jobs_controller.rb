@@ -48,7 +48,7 @@ class JobsController < ApplicationController
       flash[:notice] = 'Vaga publicada no SPV'
       # TODO: Enviar email para quem cadastrou
     end
-    redirect_to company_job_path(@job.company, @job)
+    redirect_to job_path(@job)
   end
 
   def reprove

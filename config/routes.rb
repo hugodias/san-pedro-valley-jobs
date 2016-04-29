@@ -12,15 +12,13 @@ Rails.application.routes.draw do
 
   get '/feed', to: 'jobs#feed'
 
-  resources :jobs, only: [:index, :new, :create]
+  resources :companies
 
-  resources :companies do
-    resources :jobs, except: [:new, :create] do
-      member do
-        get 'review'
-        get 'approve/:token', to: 'jobs#approve', as: 'approve_job'
-        get 'reprove/:token', to: 'jobs#reprove', as: 'reprove_job'
-      end
+  resources :jobs do
+    member do
+      get 'review'
+      get 'approve/:token', to: 'jobs#approve', as: 'approve'
+      get 'reprove/:token', to: 'jobs#reprove', as: 'reprove'
     end
   end
 
