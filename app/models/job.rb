@@ -47,7 +47,7 @@ class Job < ActiveRecord::Base
 
   def self.query(query, page)
     if query == "*"
-      Job.visible.page(page).order("created_at DESC")
+      Job.visible.page(page)
     else
       self.search query,
         where: {status: "published"},
