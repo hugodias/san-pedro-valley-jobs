@@ -1,7 +1,9 @@
 class Job < ActiveRecord::Base
   extend FriendlyId
-  scope :published, -> { where(status: "published") }
-  scope :awaiting_approval, -> { where(status: "pending") }
+  enum status: [:pending, :published, :reproved, :removed]
+
+  scope :visible, -> { where(status: Job.statuses[:published]).order(updated_at: :desc) }
+  scope :awaiting_approval, -> { where(status: Job.statuses[:pending]) }
 
   friendly_id :title, :use => [:scoped, :finders], :scope => :company
   searchkick language: "brazilian"
@@ -20,8 +22,6 @@ class Job < ActiveRecord::Base
   validates :author, presence: true
   validates :author_email, presence: true
   validates :link, :format => URI::regexp(%w(http https)), allow_blank: true
-
-  enum status: [:pending, :published, :reproved, :removed]
 
   after_create :send_mail_to_admins
 
@@ -47,7 +47,7 @@ class Job < ActiveRecord::Base
 
   def self.query(query, page)
     if query == "*"
-      Job.published.page(page).order("created_at DESC")
+      Job.visible.page(page)
     else
       self.search query,
         where: {status: "published"},

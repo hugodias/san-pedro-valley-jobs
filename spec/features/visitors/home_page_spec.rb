@@ -9,7 +9,7 @@ feature 'Home page' do
   #   When I visit the home page
   #   Then I see the title of the last published job
   scenario 'visit the home page' do
-    job = FactoryGirl.create(:job, status: 'published')
+    job = FactoryGirl.create(:job, status: Job.statuses[:published])
     visit root_path
     expect(page).to have_content job.title
   end
@@ -20,7 +20,7 @@ feature 'Home page' do
   #   Then i see the pagination next page link and click on it
   #   So i can see the next page
   scenario 'navigate using pagination' do
-    published_jobs = FactoryGirl.create_list(:job, 25, status: 'published')
+    published_jobs = FactoryGirl.create_list(:job, 25, status: Job.statuses[:published])
     first_job_second_page = published_jobs[10]
     visit root_path
     expect(page).to have_content 'Próxima'

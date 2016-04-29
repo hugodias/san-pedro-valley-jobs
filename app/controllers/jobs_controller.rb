@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  load_and_authorize_resource except: [:index]
+  load_and_authorize_resource except: [:index, :feed]
   respond_to :html
 
   before_action :set_job, only: [:approve, :reprove]
@@ -16,6 +16,14 @@ class JobsController < ApplicationController
     @query = query if query != '*'
   end
 
+  def feed
+    @jobs = Job.visible
+
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+
   def new
   end
 
@@ -23,7 +31,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      flash[:notice] = 'Tudo pronto. A vaga ja foi salva, agora precisamos analisar e decidir se a mesma será publicada ou não. Você receberá um e-mail com a resposta em algumas horas.'
+      flash[:notice] = 'Tudo pronto, a vaga foi salva com sucesso. Precisamos analisar e decidir se a mesma será publicada ou não no site. Você receberá um e-mail com a resposta em breve.'
 
       redirect_to root_url
     else
