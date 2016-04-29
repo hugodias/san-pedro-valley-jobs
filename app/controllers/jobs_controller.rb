@@ -16,6 +16,14 @@ class JobsController < ApplicationController
     @query = query if query != '*'
   end
 
+  def feed
+    @jobs = Job.visible
+
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+
   def new
   end
 

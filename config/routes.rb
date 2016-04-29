@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get '/feed', to: 'jobs#feed'
+
   resources :jobs, only: [:index, :new, :create]
 
   resources :companies do

@@ -73,14 +73,30 @@ describe Job do
         expect(@job.remove(correct_email, correct_token)).to be true
       end
     end
+    context "when viewing" do
+      it "cannot be seen by visitors when pending" do
+        @job= FactoryGirl.create(:job, status: Job.statuses[:pending])
+        user = User.new
+        ability = Ability.new(user)
+
+        expect(ability).to_not be_able_to(:read, @job)
+      end
+
+      it "can be seen by admins when pending" do
+        @job= FactoryGirl.create(:job, status: Job.statuses[:pending])
+        user = FactoryGirl.create(:admin)
+        ability = Ability.new(user)
+
+        expect(ability).to be_able_to(:read, @job)
+      end
+    end
   end
 
   describe "retrieving" do
     context "on dashboard" do
-
       it "can retrieve visible jobs" do
         FactoryGirl.create_list(:job, 5)
-        FactoryGirl.create_list(:job, 5, status: "published")
+        FactoryGirl.create_list(:job, 5, status: Job.statuses[:published])
 
         @jobs = Job.visible
         expect(@jobs.count).to eq(5)
@@ -88,7 +104,7 @@ describe Job do
 
       it "can retrieve jobs awaiting approval" do
         FactoryGirl.create_list(:job, 5)
-        FactoryGirl.create_list(:job, 5, status: 1)
+        FactoryGirl.create_list(:job, 5, status: Job.statuses[:published])
 
         @jobs = Job.awaiting_approval
         expect(@jobs.count).to eq(5)

@@ -1,5 +1,5 @@
 class CreateSampleJobsService
-  def call(count=10,status='published')
+  def call(count=10,status=1)
     (0..count).each do
       Job.create(
         title: Faker::Name.title,
