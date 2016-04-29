@@ -12,6 +12,7 @@ feature 'Navigation links', :devise do
     visit root_path
     expect(page).to have_content 'Cadastrar vaga'
     expect(page).to have_content 'Newsletter'
+    expect(page).to have_no_content 'Dashboard'
   end
 
 end
