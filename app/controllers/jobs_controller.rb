@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  load_and_authorize_resource except: [:index]
+  load_and_authorize_resource except: [:index, :feed]
   respond_to :html
 
   before_action :set_job, only: [:approve, :reprove]
