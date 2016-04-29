@@ -31,7 +31,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      flash[:notice] = 'Tudo pronto. A vaga ja foi salva, agora precisamos analisar e decidir se a mesma será publicada ou não. Você receberá um e-mail com a resposta em algumas horas.'
+      flash[:notice] = 'Tudo pronto. A vaga ja foi salva, agora precisamos analisar e decidir se a mesma será publicada ou não. Você receberá um e-mail com a resposta em breve.'
 
       redirect_to root_url
     else
