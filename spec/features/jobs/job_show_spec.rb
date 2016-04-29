@@ -10,7 +10,7 @@ feature 'Job page' do
   #   Then I see it data
   scenario 'visitor sees job page' do
     job = FactoryGirl.create(:job, status: Job.statuses[:published])
-    visit company_job_path(job.company, job)
+    visit job_path(job)
     expect(page).to have_content job.title
     expect(page).to have_content job.description
     expect(page).to have_content job.company.title
@@ -25,7 +25,7 @@ feature 'Job page' do
   #   Then I see the link but I don't see the how to apply section
   scenario 'visitor sees a job that has link published' do
     job = FactoryGirl.create(:job, status: Job.statuses[:published], link: Faker::Internet.url, how_to_apply: 'Teste')
-    visit company_job_path(job.company, job)
+    visit job_path(job)
     expect(page).to have_content 'Candidatar'
     expect(page).to have_no_content job.how_to_apply
   end

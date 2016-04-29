@@ -5,7 +5,7 @@ class Job < ActiveRecord::Base
   scope :visible, -> { where(status: Job.statuses[:published]).order(updated_at: :desc) }
   scope :awaiting_approval, -> { where(status: Job.statuses[:pending]) }
 
-  friendly_id :title, :use => [:scoped, :finders], :scope => :company
+  friendly_id :unique_slug, :use => [:slugged, :finders]
   searchkick language: "brazilian"
 
   paginates_per 10
@@ -24,6 +24,20 @@ class Job < ActiveRecord::Base
   validates :link, :format => URI::regexp(%w(http https)), allow_blank: true
 
   after_create :send_mail_to_admins
+
+  def should_generate_new_friendly_id?
+    true
+  end
+
+  def unique_slug
+    "#{self.title}-#{self.company.title if self.company.present?}"
+  end
+
+  def slug_candidates
+    [
+      :unique_slug
+    ]
+  end
 
   def search_data
     {

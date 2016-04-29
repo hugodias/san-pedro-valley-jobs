@@ -3,8 +3,8 @@
     <h3 class="review-bar__title">Esta vaga de emprego está pendente.</h3>
     <h5 class="review-bar__subtitle">Leia atentamente a vaga e decida:</h5>
 
-    <a href="<%= approve_job_company_job_path(job.company, job, job.token) %>" class="btn review-bar__btn  review-bar__btn--approve">Aprovar vaga!</a>
+    <a href="<%= approve_job_path(job, job.token) %>" class="btn review-bar__btn  review-bar__btn--approve">Aprovar vaga!</a>
 
-    <a href="<%= reprove_job_company_job_path(job.company, job, job.token) %>" class="btn review-bar__btn  review-bar__btn--reprove">Reprovar.</a>
+    <a href="<%= reprove_job_path(job, job.token) %>" class="btn review-bar__btn  review-bar__btn--reprove">Reprovar.</a>
   </div>
 </div>
