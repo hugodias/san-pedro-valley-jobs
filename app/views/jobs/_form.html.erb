@@ -13,7 +13,7 @@
 
               <p>Depois de cadastrar uma vaga, ela será analisada, e caso seja aprovada estará no site em poucos minutos.</p>
 
-              <p>Antes de publicar, leia o <a href="" class="link-accent" target="_blank">guia de boas práticas</a> para o cadastro de vagas.</p>
+              <p>Antes de publicar, leia o <a href="https://github.com/hugodias/san-pedro-valley-jobs/blob/master/GUIA.md" class="link-accent" target="_blank">guia de boas práticas</a> para o cadastro de vagas.</p>
               <hr>
               <%= f.association :company, label: 'Comece selecionando a startup', hint: 'A startup não aparece aqui? Cadastre gratuitamente em http://www.sanpedrovalley.org', collection: Company.order('title ASC'), input_html: { "data-placeholder": "Escolha a Startup", autofocus: true} %>
             </div>
