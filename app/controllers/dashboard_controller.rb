@@ -4,7 +4,8 @@ class DashboardController < ApplicationController
 
   def index
     @jobs = Job.awaiting_approval
-    @published_jobs = Job.published
+    @published_jobs = Job.published.count
+    @startups = Company.count
   end
 
   private
