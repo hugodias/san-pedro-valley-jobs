@@ -5,7 +5,7 @@
 }
 
 .main {
-  padding: 50px 20px;
+  padding: 50px 0;
 
   .page-header {
     margin-top: 0;
@@ -13,13 +13,6 @@
 
   .sub-header {
     margin-bottom: 30px;
-  }
-}
-
-@media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
   }
 }
 
