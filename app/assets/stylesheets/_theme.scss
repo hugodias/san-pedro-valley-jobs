@@ -45,6 +45,11 @@ a {
     color: $accent-color;
     font-weight: bold;
   }
+
+  &.link-danger {
+    color: $red;
+    font-weight: bold;
+  }
 }
 
 .color-primary {

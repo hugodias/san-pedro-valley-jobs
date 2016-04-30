@@ -2,7 +2,7 @@
 #   As a visitor
 #   I want to visit a job page
 #   So I can see it data
-feature 'Job page' do
+feature 'Job page', :devise do
 
   # Scenario: Visitor can see a published job
   #   Given I am a visitor
@@ -28,5 +28,17 @@ feature 'Job page' do
     visit job_path(job)
     expect(page).to have_content 'Candidatar'
     expect(page).to have_no_content job.how_to_apply
+  end
+
+  # Scenario: Admins can see remove job link
+  #   Given I am a admin
+  #   When I visit a published job
+  #   Then I see the remove job link
+  scenario 'admin see remove job link' do
+    job = FactoryGirl.create(:job, status: Job.statuses[:published])
+    admin = FactoryGirl.create(:admin)
+    signin(admin.email, admin.password)
+    visit job_path(job)
+    expect(page).to have_content 'Remover vaga'
   end
 end

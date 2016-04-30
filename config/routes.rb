@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get 'review'
       get 'approve/:token', to: 'jobs#approve', as: 'approve'
       get 'reprove/:token', to: 'jobs#reprove', as: 'reprove'
+      get 'remove/:token', to: 'jobs#remove', as: 'remove'
     end
   end
 

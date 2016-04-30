@@ -61,7 +61,7 @@ describe Job do
         expect(admin_ability).to be_able_to(:update, @job)
       end
 
-      it "can only be removed by the author" do
+      it "can be removed with valid credentials" do
         @job = FactoryGirl.create(:job)
         fake_author_email = Faker::Internet.email
         fake_token = Faker::Bitcoin.address
