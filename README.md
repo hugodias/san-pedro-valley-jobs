@@ -60,22 +60,11 @@ Pré-requisitos: Instale o [Elasticsearch](https://www.elastic.co/products/elast
     $ bundle install
     ```
 
-4. Crie um arquivo `.env` na raiz do projeto com as seguintes informações:
+4. Duplique o arquivo `.env.example` na raiz do projeto:
 
-````
-RACK_ENV=development
-PORT=3000
-ADMIN_NAME=Seu Nome
-ADMIN_EMAIL=seu.email@gmail.com
-ADMIN_PASSWORD=suasenha
-ELASTICSEARCH_URL=http://localhost:9200
-MAILGUN_DOMAIN=XXXXXXXXXX
-MAILGUN_SMTP_LOGIN=XXXXXXXXX
-MAILGUN_SMTP_PASSWORD=XXXXXXXXX
-MAILGUN_SMTP_SERVER=smtp.mailgun.org
-DEFAULT_FROM=XXXXXXXXX
-DOMAIN_NAME=localhost:3000
-````
+    ````
+    cp .env.example .env
+    ````
 
 5. Crie as tabelas:
 
