@@ -26,7 +26,7 @@ class Job < ActiveRecord::Base
   after_create :send_mail_to_admins
 
   def should_generate_new_friendly_id?
-    true
+    title_changed?
   end
 
   def unique_slug
