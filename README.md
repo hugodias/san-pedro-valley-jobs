@@ -1,4 +1,4 @@
-San Pedro Valley Jobs - Alpha 0.1
+San Pedro Valley Jobs - Beta
 -
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
@@ -103,6 +103,7 @@ Addons necessários no heroku:
 * Bonsai Elasticsearch (Ou algum outro de Elasticsearch)
 * Postgres
 * Redis To Go (Para o sidekiq)
+* Mailgun/Sandgrid/Mandril
 
 Não se esqueça de habilitar ao menos 1 worker no painel do heroku para que o sidekiq funcione corretamente.
 
