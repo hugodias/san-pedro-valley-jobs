@@ -26,7 +26,9 @@ class Job < ActiveRecord::Base
   after_create :send_mail_to_admins
 
   def ad
-    "Startup: <strong>#{self.company.title}</strong><br/>Área: <strong>#{self.job_type.title}</strong>"
+    "Startup: <strong>#{self.company.title}</strong>" +
+    "<br/>Área: <strong>#{self.category.title}</strong>" +
+    "<br/>Regime de contratação: <strong>#{self.job_type.title}</strong>"
   end
 
   def should_generate_new_friendly_id?
