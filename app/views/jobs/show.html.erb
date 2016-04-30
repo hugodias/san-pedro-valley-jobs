@@ -32,6 +32,10 @@
         </div>
         <div class="col-sm-4">
           <%= render 'job_info' %>
+
+          <% if can? :manage, Job %>
+            <%= render 'job_actions' %>
+          <% end %>
         </div>
       </div>
     </div>

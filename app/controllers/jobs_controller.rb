@@ -60,6 +60,14 @@ class JobsController < ApplicationController
     redirect_to dashboard_index_url
   end
 
+  def remove
+    if @job.published?
+      @job.removed!
+      flash[:notice] = 'Vaga removida do site.'
+    end
+    redirect_to root_url
+  end
+
   private
 
   def job_params

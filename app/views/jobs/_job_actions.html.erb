@@ -1,0 +1,15 @@
+<div class="section-job-actions">
+  <h3><%= fa_icon('cogs', text: 'Adminstrativo') %></h3>
+
+  <p>
+    <strong>Autor: </strong><%= @job.author %> <br>
+    <strong>E-mail: </strong><%= @job.author_email %>
+  </p>
+  <hr>
+  <h4>Ações</h4>
+  <ul>
+    <li>
+      <%= link_to 'Remover vaga', remove_job_path(@job, @job.token), class: 'link-danger', data: { confirm: 'Deseja realmente remover esta vaga do site?' } %>
+    </li>
+  </ul>
+</div>
