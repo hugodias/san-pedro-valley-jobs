@@ -13,13 +13,12 @@
   <body class="<%= curr_page %>">
     <%= render 'layouts/messages' %>
     <%= render 'layouts/navigation' %>
+    <div class="clearfix"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 main">
-
-          <%= yield %>
-        </div>
+      <div class="main">
+        <%= yield %>
       </div>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
