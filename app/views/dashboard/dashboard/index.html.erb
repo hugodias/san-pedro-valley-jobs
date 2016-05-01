@@ -1,4 +1,3 @@
-
 <div class="row stats">
   <div class="col-xs-12 col-sm-4 stat">
     <div class="card">
@@ -19,7 +18,7 @@
   <div class="col-xs-12 col-sm-4 stat">
     <div class="card">
       <div class="card-content">
-        <h4><%= @startups %></h4>
+        <h4><%= link_to @startups, dashboard_companies_path %></h4>
         <span class="text-muted">Startups cadastradas</span>
       </div>
     </div>

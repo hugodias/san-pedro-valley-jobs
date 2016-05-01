@@ -23,5 +23,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :dashboard, only: [:index], as: 'dashboard'
+  namespace :dashboard do
+    root to: 'dashboard#index'
+
+    resources :companies
+  end
 end
