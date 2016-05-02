@@ -1,0 +1,29 @@
+<h2 class="sub-header">Startups</h2>
+
+<div class="card">
+  <div class="card-content card-content--editor">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome da startup</th>
+          <th>Website</th>
+          <th>Endereço</th>
+          <th>Link no SPV</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @companies.each do |company| %>
+        <tr>
+          <td><%= company.title %></td>
+          <td><%= company.website %></td>
+          <td><%= company.address %></td>
+          <td><%= company.link %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= paginate @companies %>
