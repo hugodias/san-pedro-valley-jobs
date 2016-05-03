@@ -34,6 +34,6 @@ class @GoogleAnalytics
     document.domain.indexOf(str) isnt -1
 
   @analyticsId: ->
-    "<%= ENV['GOOGLE_ANALYTICS'] %>"
+    "UA-47402137-1"
 
 GoogleAnalytics.load()
