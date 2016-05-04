@@ -109,6 +109,6 @@ Se quiser enviar um pull request, por favor faça-o na branch `dev`.
 
 Tenha certeza que sua pull-request está bem testada, de preferência com testes unitários e de integração (Veja a pasta specs/features)
 
-## Garantia da Qualidade [![Code Climate](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs/badges/gpa.svg)](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs)
+## Garantia da Qualidade [![Code Climate](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs/badges/gpa.svg)](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs) [![Test Coverage](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs/badges/coverage.svg)](https://codeclimate.com/github/hugodias/san-pedro-valley-jobs/coverage)
 
 Para garantir a qualidade, é utilizado um guia de estilos, boas práticas e má praticas. Essa garantia é monitorada pelo [Code Climate](https://codeclimate.com) e pelo [houndci](http://houndci.com). O Code Climate checa por má práticas de programação em relação a estrutura do código enquanto que o Houndci checa má práticas na sintaxe do código, isto é, se a leitura do mesmo não é demasiada complicada.
