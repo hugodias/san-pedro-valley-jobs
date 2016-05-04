@@ -6,14 +6,14 @@ class JobsController < ApplicationController
   before_action :check_token, only: [:approve, :reprove]
 
   def index
+    query = nil
+
     if params[:query].present? && !params[:query][:q].blank?
       query = params[:query][:q]
-    else
-      query = '*'
     end
 
     @jobs = Job.query(query, params[:page])
-    @query = query if query != '*'
+    @query = query unless query.nil?
   end
 
   def feed

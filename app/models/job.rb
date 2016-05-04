@@ -5,7 +5,7 @@ class Job < ActiveRecord::Base
   scope :visible, -> { where(status: Job.statuses[:published]).order(updated_at: :desc) }
   scope :awaiting_approval, -> { where(status: Job.statuses[:pending]) }
 
-  friendly_id :unique_slug, :use => [:slugged, :finders]
+  friendly_id :slug_candidates, :use => [:slugged, :finders]
   searchkick language: "brazilian"
 
   paginates_per 10
@@ -35,13 +35,13 @@ class Job < ActiveRecord::Base
     title_changed?
   end
 
-  def unique_slug
-    "#{self.title}-#{self.company.title if self.company.present?}"
+  def company_name
+    self.company.title if self.company.present?
   end
 
   def slug_candidates
     [
-      :unique_slug
+      [:title, :company_name]
     ]
   end
 
@@ -66,7 +66,7 @@ class Job < ActiveRecord::Base
   end
 
   def self.query(query, page)
-    if query == "*"
+    if query.nil?
       Job.visible.page(page)
     else
       self.search query,

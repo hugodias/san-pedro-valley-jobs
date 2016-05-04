@@ -73,6 +73,7 @@ describe Job do
         expect(@job.remove(correct_email, correct_token)).to be true
       end
     end
+
     context "when viewing" do
       it "cannot be seen by visitors when pending" do
         @job= FactoryGirl.create(:job, status: Job.statuses[:pending])
@@ -113,6 +114,19 @@ describe Job do
 
     context "searching" do
       it "can search by name" do
+      end
+
+      it "returns all jobs when query is nil" do
+        FactoryGirl.create_list(:job, 5, status: Job.statuses[:published])
+        expect(Job.query(nil,1).count).to eq 5
+      end
+    end
+
+    context "finding" do
+      it "have a valid unique slug" do
+        company = FactoryGirl.create(:company, title: 'Company Foo')
+        job = FactoryGirl.create(:job, title: 'Lorem Ipsum Foo', company: company)
+        expect(job.slug).to eq "lorem-ipsum-foo-company-foo"
       end
     end
   end
