@@ -5,7 +5,7 @@ San Pedro Valley Jobs - Beta
 
 Este é o repositório do novo Job Board de [San Pedro Valley](http://jobs.sanpedrovalley.org)
 
-Veja funcionando em [sanpedrovalleyjobs.herokuapp.com](https://sanpedrovalleyjobs.herokuapp.com)
+Veja funcionando em [jobs.sanpedrovalley.org](https://jobs.sanpedrovalley.org)
 
 
 [![Build Status](https://semaphoreci.com/api/v1/hugodias/san-pedro-valley-jobs/branches/master/badge.svg)](https://semaphoreci.com/hugodias/san-pedro-valley-jobs) [![Join the chat at https://gitter.im/hugodias/san-pedro-valley-jobs](https://badges.gitter.im/hugodias/san-pedro-valley-jobs.svg)](https://gitter.im/hugodias/san-pedro-valley-jobs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
