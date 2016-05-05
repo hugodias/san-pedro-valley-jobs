@@ -9,7 +9,7 @@ O titulo deve ser claro sobre a posição a ser exercida, sem enrrolação.
 "Desenvolvedor de sistemas, sites e blogs em PHP e Wordpress" # Não, muito longo.
 ````
 ````javascript
-"Web Designer" # Não, seja um pouco mais específico.
+"Web" # Não, seja um pouco mais específico.
 ````
 ````javascript
 "Designer com experiência em Sketch" # Não, aqui é o titulo da vaga, não os requerimentos necessários.
