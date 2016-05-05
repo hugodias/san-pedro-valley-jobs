@@ -2,7 +2,7 @@
   <%= simple_form_for(:query, method: 'get') do |f| %>
   <div class="col-md-10">
     <%= fa_icon 'search 3x' %>
-    <%= f.input :q, label: false, autofocus: true, placeholder: 'Palavras chave, cargos, locais', input_html: { autocomplete: "off", value: @query } %>
+    <%= f.input :q, label: false, placeholder: 'Palavras chave, cargos, locais', input_html: { autocomplete: "off", value: @query } %>
     <div class="clearfix"></div>
     <span class="search-form__hint">Exemplos de buscas:
       <a href="<%= root_url %>?query[q]=Photoshop" class="search-form__hint__link">Photoshop</a>,
