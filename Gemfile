@@ -33,6 +33,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'puma'
+gem 'newrelic_rpm'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
