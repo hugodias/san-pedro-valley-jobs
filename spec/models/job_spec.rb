@@ -74,6 +74,20 @@ describe Job do
       end
     end
 
+    context "when approving" do
+      it "send an email to author" do
+        job = FactoryGirl.create(:job)
+        expect { job.send_approved_mail }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+
+    context "when reproving" do
+      it "send an email to author" do
+        job = FactoryGirl.create(:job)
+        expect { job.send_reproved_mail }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+
     context "when viewing" do
       it "cannot be seen by visitors when pending" do
         @job= FactoryGirl.create(:job, status: Job.statuses[:pending])
