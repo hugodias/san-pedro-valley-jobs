@@ -34,6 +34,7 @@ gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'puma'
 gem 'newrelic_rpm'
+gem 'rubocop', require: false
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
