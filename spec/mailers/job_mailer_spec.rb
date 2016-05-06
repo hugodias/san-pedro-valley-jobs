@@ -27,7 +27,7 @@ RSpec.describe JobMailer do
     let(:mail) { described_class.job_approved(job).deliver_now }
 
     it 'renders the subject' do
-      expect(mail.subject).to eq "[SPV Jobs] Sua vaga foi aprovada :)"
+      expect(mail.subject).to eq '[SPV Jobs] Sua vaga foi aprovada :)'
     end
 
     it 'renders the receiver email' do
@@ -43,7 +43,7 @@ RSpec.describe JobMailer do
     end
 
     it 'assigns state' do
-      expect(mail.body.encoded).to match("aprovada")
+      expect(mail.body.encoded).to match 'aprovada'
     end
   end
 
@@ -52,7 +52,7 @@ RSpec.describe JobMailer do
     let(:mail) { described_class.job_reproved(job).deliver_now }
 
     it 'renders the subject' do
-      expect(mail.subject).to eq "[SPV Jobs] Sua vaga foi reprovada :/"
+      expect(mail.subject).to eq '[SPV Jobs] Sua vaga foi reprovada :/'
     end
 
     it 'renders the receiver email' do
@@ -68,7 +68,7 @@ RSpec.describe JobMailer do
     end
 
     it 'assigns state' do
-      expect(mail.body.encoded).to match("reprovada")
+      expect(mail.body.encoded).to match 'reprovada'
     end
   end
 end

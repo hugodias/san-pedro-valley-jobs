@@ -9,11 +9,11 @@ class JobMailer < ApplicationMailer
 
   def job_approved(job)
     @job = job
-    mail(to: job.author_email, subject: "[SPV Jobs] Sua vaga foi aprovada :)")
+    mail(to: job.author_email, subject: '[SPV Jobs] Sua vaga foi aprovada :)')
   end
 
   def job_reproved(job)
     @job = job
-    mail(to: job.author_email, subject: "[SPV Jobs] Sua vaga foi reprovada :/")
+    mail(to: job.author_email, subject: '[SPV Jobs] Sua vaga foi reprovada :/')
   end
 end
