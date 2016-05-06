@@ -12,9 +12,7 @@ class Ability
       can :read, Company
       can :read, JobType
       can :read, Category
-      can :read, Job do |job|
-        job.published?
-      end
+      can :read, Job, &:published?
       can :create, Job
     end
   end
