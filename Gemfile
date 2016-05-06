@@ -28,7 +28,6 @@ gem "trix"
 gem "nprogress-rails"
 gem "kaminari"
 gem "searchkick"
-gem "mailgun_rails"
 gem "friendly_id", "~> 5.1.0"
 gem "sidekiq"
 gem "sinatra", require: nil
