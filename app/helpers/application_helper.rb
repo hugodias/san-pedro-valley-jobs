@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def curr_page
     "#{params[:controller]}-#{params[:action]}"
   end
