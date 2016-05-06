@@ -6,7 +6,6 @@ FactoryGirl.define do
     logo nil
 
     factory :company_with_jobs do
-
       transient do
         jobs_count 5
       end

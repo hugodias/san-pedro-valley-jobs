@@ -20,7 +20,7 @@ class JobsController < ApplicationController
     @jobs = Job.visible
 
     respond_to do |format|
-      format.rss { render :layout => false }
+      format.rss { render layout: false }
     end
   end
 
@@ -31,11 +31,13 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
 
     if @job.save
-      flash[:notice] = 'Tudo pronto, a vaga foi salva com sucesso. Precisamos analisar e decidir se a mesma será publicada ou não no site. Você receberá um e-mail com a resposta em breve.'
+      flash[:notice] = "Tudo pronto, a vaga foi salva com sucesso."\
+      " Precisamos analisar e decidir se a mesma será publicada "\
+      "ou não no site. Você receberá um e-mail com a resposta em breve."
 
       redirect_to root_url
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -46,7 +48,7 @@ class JobsController < ApplicationController
     if @job.pending?
       @job.published!
       @job.send_approved_mail
-      flash[:notice] = 'Vaga publicada no SPV'
+      flash[:notice] = "Vaga publicada no SPV"
     end
     redirect_to job_path(@job)
   end
@@ -55,7 +57,7 @@ class JobsController < ApplicationController
     if @job.pending?
       @job.reproved!
       @job.send_reproved_mail
-      flash[:notice] = 'Vaga reprovada'
+      flash[:notice] = "Vaga reprovada"
     end
     redirect_to dashboard_root_path
   end
@@ -63,7 +65,7 @@ class JobsController < ApplicationController
   def remove
     if @job.published?
       @job.removed!
-      flash[:notice] = 'Vaga removida do site.'
+      flash[:notice] = "Vaga removida do site."
     end
     redirect_to root_url
   end
@@ -71,12 +73,23 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :salary, :location, :description, :link, :company_id, :category_id, :job_type_id, :how_to_apply, :author, :author_email)
+    params.require(:job).permit(
+      :title,
+      :salary,
+      :location,
+      :description,
+      :link,
+      :company_id,
+      :category_id,
+      :job_type_id,
+      :how_to_apply,
+      :author,
+      :author_email)
   end
 
   def check_token
     unless @job.token == params[:token]
-      raise ActionController::RoutingError.new('Token Inválido')
+      raise ActionController::RoutingError.new("Token Inválido")
     end
   end
 

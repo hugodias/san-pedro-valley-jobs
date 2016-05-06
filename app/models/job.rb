@@ -2,10 +2,12 @@ class Job < ActiveRecord::Base
   extend FriendlyId
   enum status: [:pending, :published, :reproved, :removed]
 
-  scope :visible, -> { where(status: Job.statuses[:published]).order(updated_at: :desc) }
+  scope :visible, lambda {
+    where(status: Job.statuses[:published]).order(updated_at: :desc)
+  }
   scope :awaiting_approval, -> { where(status: Job.statuses[:pending]) }
 
-  friendly_id :slug_candidates, :use => [:slugged, :finders]
+  friendly_id :slug_candidates, use: [:slugged, :finders]
   searchkick language: "brazilian"
 
   paginates_per 10
@@ -21,14 +23,14 @@ class Job < ActiveRecord::Base
   validates :company, presence: true
   validates :author, presence: true
   validates :author_email, presence: true
-  validates :link, :format => URI::regexp(%w(http https)), allow_blank: true
+  validates :link, format: URI.regexp(%w(http https)), allow_blank: true
 
   after_create :send_mail_to_admins
 
   def ad
-    "Startup: <strong>#{self.company.title}</strong>" +
-    "<br/>Área: <strong>#{self.category.title}</strong>" +
-    "<br/>Regime de contratação: <strong>#{self.job_type.title}</strong>"
+    "Startup: <strong>#{company.title}</strong>" \
+      "<br/>Área: <strong>#{category.title}</strong>" \
+      "<br/>Regime de contratação: <strong>#{job_type.title}</strong>"
   end
 
   def should_generate_new_friendly_id?
@@ -36,7 +38,7 @@ class Job < ActiveRecord::Base
   end
 
   def company_name
-    self.company.title if self.company.present?
+    company.title if company.present?
   end
 
   def slug_candidates
@@ -58,8 +60,8 @@ class Job < ActiveRecord::Base
   end
 
   def remove(email, token)
-    if self.author_email == email && self.token == token
-      self.removed!
+    if author_email == email && self.token == token
+      removed!
     else
       false
     end
@@ -69,11 +71,20 @@ class Job < ActiveRecord::Base
     if query.nil?
       Job.visible.page(page)
     else
-      self.search query,
-        where: {status: "published"},
-        fields: ['title^10', 'description', 'location', 'company_name', 'job_type_name', 'category_name'],
+      search(
+        query,
+        where: {
+          status: "published"
+        },
+        fields: [
+          "title^10",
+          "description",
+          "location",
+          "company_name",
+          "job_type_name",
+          "category_name"],
         page: page,
-        per_page: 10
+        per_page: 10)
     end
   end
 
