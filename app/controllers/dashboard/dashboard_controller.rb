@@ -1,7 +1,7 @@
 module Dashboard
   class DashboardController < ApplicationController
     before_filter :authorize_dashboard
-    layout 'dashboard'
+    layout "dashboard"
 
     def index
       @jobs = Job.awaiting_approval
