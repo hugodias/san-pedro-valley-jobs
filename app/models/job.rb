@@ -80,4 +80,12 @@ class Job < ActiveRecord::Base
   def send_mail_to_admins
     JobMailer.job_created(self).deliver_later
   end
+
+  def send_approved_mail
+    JobMailer.job_approved(self).deliver_later
+  end
+
+  def send_reproved_mail
+    JobMailer.job_reproved(self).deliver_later
+  end
 end

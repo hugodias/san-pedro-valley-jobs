@@ -45,8 +45,8 @@ class JobsController < ApplicationController
   def approve
     if @job.pending?
       @job.published!
+      @job.send_approved_mail
       flash[:notice] = 'Vaga publicada no SPV'
-      # TODO: Enviar email para quem cadastrou
     end
     redirect_to job_path(@job)
   end
@@ -54,8 +54,8 @@ class JobsController < ApplicationController
   def reprove
     if @job.pending?
       @job.reproved!
+      @job.send_reproved_mail
       flash[:notice] = 'Vaga reprovada'
-      # TODO: Enviar email para quem cadastrou
     end
     redirect_to dashboard_root_path
   end

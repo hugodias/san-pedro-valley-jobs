@@ -1,0 +1,32 @@
+<p>
+  Olá
+  <%= @job.author %>, infelizmente a vaga que você publicou no
+  <strong>SPV Jobs</strong>
+  foi reprovada.
+</p>
+<p>
+  Titulo da vaga:
+  <strong><%= @job.title %></strong><br/>
+  Startup:
+  <strong><%= @job.company.title %></strong><br/>
+  Categoria:
+  <strong><%= @job.category.title %></strong><br/>
+  Tipo de job:
+  <strong><%= @job.job_type.title %></strong><br>
+  <% if @job.salary.present? %>
+  Salário:
+  <strong><%= @job.salary %></strong>
+  <% end %>
+</p>
+<p>
+  Os principais motívos que levam um job a ser reprovado são:
+</p>
+<ol>
+  <li>A vaga está totalmente fora dos padrões sugeridos no
+  <a href="https://github.com/hugodias/san-pedro-valley-jobs/blob/master/GUIA.md">guia de boas práticas</a>
+  para o cadastro de vagas.</li>
+  <li>Já existe uma vaga parecida, para a <strong>mesma startup</strong>, cadastrada no SPV Jobs.</li>
+</ol>
+<p>
+  Caso ainda esteja com dúvidas, entre em contato respondendo este e-mail!
+</p>

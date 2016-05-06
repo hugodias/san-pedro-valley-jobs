@@ -28,7 +28,7 @@ describe Job do
       end
 
       it "cannot be saved with a wrong link" do
-        @job = FactoryGirl.build(:job, link: 'Foobar')
+        @job = FactoryGirl.build(:job, link: "Foobar")
         @job.valid?
         expect(@job.errors[:link]).to include("não é válido")
 
@@ -74,9 +74,25 @@ describe Job do
       end
     end
 
+    context "when approving" do
+      it "send an email to author" do
+        job = FactoryGirl.create(:job)
+        expect { job.send_approved_mail }.
+          to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+
+    context "when reproving" do
+      it "send an email to author" do
+        job = FactoryGirl.create(:job)
+        expect { job.send_reproved_mail }.
+          to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+
     context "when viewing" do
       it "cannot be seen by visitors when pending" do
-        @job= FactoryGirl.create(:job, status: Job.statuses[:pending])
+        @job = FactoryGirl.create(:job, status: Job.statuses[:pending])
         user = User.new
         ability = Ability.new(user)
 
@@ -84,7 +100,7 @@ describe Job do
       end
 
       it "can be seen by admins when pending" do
-        @job= FactoryGirl.create(:job, status: Job.statuses[:pending])
+        @job = FactoryGirl.create(:job, status: Job.statuses[:pending])
         user = FactoryGirl.create(:admin)
         ability = Ability.new(user)
 
@@ -118,14 +134,17 @@ describe Job do
 
       it "returns all jobs when query is nil" do
         FactoryGirl.create_list(:job, 5, status: Job.statuses[:published])
-        expect(Job.query(nil,1).count).to eq 5
+        expect(Job.query(nil, 1).count).to eq 5
       end
     end
 
     context "finding" do
       it "have a valid unique slug" do
-        company = FactoryGirl.create(:company, title: 'Company Foo')
-        job = FactoryGirl.create(:job, title: 'Lorem Ipsum Foo', company: company)
+        company = FactoryGirl.create(:company, title: "Company Foo")
+        job = FactoryGirl.create(
+          :job,
+          title: "Lorem Ipsum Foo",
+          company: company)
         expect(job.slug).to eq "lorem-ipsum-foo-company-foo"
       end
     end

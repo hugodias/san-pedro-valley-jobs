@@ -1,0 +1,11 @@
+<p>
+  Olá
+  <%= @job.author %>, temos boas notícias!
+</p>
+<p>
+  A vaga que você cadastrou no SPV Jobs (<strong><%= @job.title %></strong>) acaba de ser aprovada e publicada!
+</p>
+<p>
+  Confira a vaga em
+  <%= link_to job_url(@job), job_url(@job) %>.
+</p>

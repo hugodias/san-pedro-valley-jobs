@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <p>
-      Titulo da vaga: <strong><%= @job.title %></strong><br/>
-      Startup: <strong><%= @job.company.title %></strong><br/>
-      Categoria: <strong><%= @job.category.title %></strong><br/>
-      Tipo de job: <strong><%= @job.job_type.title %></strong><br>
-      Salário: <strong><%= @job.salary %></strong>
-    </p>
+<p>
+  Titulo da vaga:
+  <strong><%= @job.title %></strong><br/>
+  Startup:
+  <strong><%= @job.company.title %></strong><br/>
+  Categoria:
+  <strong><%= @job.category.title %></strong><br/>
+  Tipo de job:
+  <strong><%= @job.job_type.title %></strong><br>
+  <% if @job.salary.present? %>
+  Salário:
+  <strong><%= @job.salary %></strong>
+  <% end %>
+</p>
 
-    <p><strong>Descrição:</strong></p>
+<p>
+  <strong>Descrição:</strong>
+</p>
 
-    <%= @job.description.html_safe %>
-    <hr>
+<%= @job.description.html_safe %>
+<hr>
 
-    <p>Depois de analisar cuidadosamente a vaga, você deseja
-
-      <strong><%= link_to 'Aprovar', approve_job_url(@job.company.slug, @job.slug, @job.token) %></strong> ou <strong><%= link_to 'Reprovar', reprove_job_url(@job.company.slug, @job.slug, @job.token) %></strong>
-    </p>
-  </body>
-</html>
+<p>Confira a vaga completa
+  <%= link_to 'clicando aqui', job_url(@job) %></p>
