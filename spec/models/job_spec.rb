@@ -130,6 +130,14 @@ describe Job do
 
     context "searching" do
       it "can search by name" do
+        FactoryGirl.create(:job,
+                           title: "Foobar",
+                           status: Job.statuses[:published])
+
+        Job.searchkick_index.refresh
+        Job.reindex
+
+        expect(Job.query("Foobar", 1).total_count).to eq(1)
       end
 
       it "returns all jobs when query is nil" do
