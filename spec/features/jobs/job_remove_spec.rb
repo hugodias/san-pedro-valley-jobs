@@ -8,10 +8,13 @@ feature "Job removal", :devise do
   #   When I click in remove job
   #   Then I see it success message
   scenario "admin can remove a job" do
-    job = FactoryGirl.create(:job, status: Job.statuses[:published])
+    job   = FactoryGirl.create(:job, status: Job.statuses[:published])
     admin = FactoryGirl.create(:admin)
+
     signin(admin.email, admin.password)
+
     visit job_path(job)
+
     click_link "Remover vaga"
     expect(page).to have_content "Vaga removida do site."
   end
