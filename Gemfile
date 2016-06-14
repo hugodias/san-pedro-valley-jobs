@@ -36,8 +36,11 @@ group :development do
   gem "rails_layout"
   gem "spring-commands-rspec"
   gem "pry-rails"
-  gem "rb-fsevent" if `uname` =~ /Darwin/
   gem "terminal-notifier-guard"
+end
+
+group :test, :darwin do
+  gem "rb-fsevent"
 end
 
 group :development, :test do
