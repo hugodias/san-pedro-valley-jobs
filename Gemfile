@@ -40,6 +40,8 @@ group :development do
   gem "rails_layout"
   gem "spring-commands-rspec"
   gem "pry-rails"
+  gem "rb-fsevent" if `uname` =~ /Darwin/
+  gem "terminal-notifier-guard"
 end
 group :development, :test do
   gem "factory_girl_rails"
@@ -57,5 +59,6 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "selenium-webdriver"
+  gem "guard-rspec"
   gem "codeclimate-test-reporter", require: nil
 end
