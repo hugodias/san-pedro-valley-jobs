@@ -162,6 +162,11 @@ h3 {
   &:focus {
     color: $primary-color-text;
   }
+
+  img {
+    z-index: 200;
+    position: relative;
+  }
 }
 
 .navbar {
@@ -197,6 +202,15 @@ h3 {
 
 #nprogress .bar {
   background: $accent-color;
+}
+
+#mobile-menu{
+  @include mq($from: mobile, $until: tablet) {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    background: $primary-color-dark;
+  }
 }
 
 .section-colored-top {
