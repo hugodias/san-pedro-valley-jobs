@@ -27,13 +27,14 @@ gem "sinatra", require: nil
 gem "puma"
 gem "newrelic_rpm"
 gem "rubocop", require: false
+gem 'good_services', '~> 0.2.0'
 
 group :development do
   gem "web-console"
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-
+  gem "pry-rails"
   gem "guard-bundler"
   gem "guard-rails"
   gem "guard-rspec"

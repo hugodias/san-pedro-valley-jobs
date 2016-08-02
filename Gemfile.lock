@@ -139,6 +139,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    good_services (0.2.0)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -212,6 +213,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (3.4.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -382,6 +385,7 @@ DEPENDENCIES
   faker
   font-awesome-rails
   friendly_id (~> 5.1.0)
+  good_services (~> 0.2.0)
   guard-bundler
   guard-rails
   guard-rspec
@@ -395,6 +399,7 @@ DEPENDENCIES
   newrelic_rpm
   nprogress-rails
   pg
+  pry-rails
   puma
   rails (= 4.2.5.2)
   rails-i18n
