@@ -34,7 +34,6 @@ group :development do
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem "pry-rails"
   gem "guard-bundler"
   gem "guard-rails"
   gem "guard-rspec"
@@ -52,6 +51,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "sqlite3"
   gem "dotenv-rails"
+  gem "pry-rails"
   gem "byebug"
 end
 
