@@ -28,15 +28,16 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(job_params)
+    service = Jobs::JobCreator.new(job_params)
 
-    if @job.save
+    if service.run
       flash[:notice] = "Tudo pronto, a vaga foi salva com sucesso."\
       " Precisamos analisar e decidir se a mesma será publicada "\
       "ou não no site. Você receberá um e-mail com a resposta em breve."
 
       redirect_to root_url
     else
+      @job = service.record
       render "new"
     end
   end
