@@ -13,6 +13,10 @@
   height: auto;
   margin-top: 0;
   padding: 5px 40px;
+
+  @include mq($from: mobile, $until: tablet) {
+    margin-top: 20px;
+  }
 }
 
 .job {

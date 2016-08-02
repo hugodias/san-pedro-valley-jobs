@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.3.0"
+ruby "2.3.1"
 gem "rails", "4.2.5.2"
 gem "sass-rails", "~> 5.0"
 gem "rails-i18n"
@@ -27,20 +27,22 @@ gem "sinatra", require: nil
 gem "puma"
 gem "newrelic_rpm"
 gem "rubocop", require: false
+gem 'good_services', '~> 0.2.0'
 
 group :development do
-  gem "web-console", "~> 2.0"
+  gem "web-console"
+  gem "listen"
   gem "spring"
-  gem "better_errors"
-  gem "quiet_assets"
-  gem "rails_layout"
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "guard-bundler"
+  gem "guard-rails"
+  gem "guard-rspec"
   gem "spring-commands-rspec"
-  gem "pry-rails"
+  gem "rb-fchange", :require=>false
+  gem "rb-fsevent", :require=>false
+  gem "rb-inotify", :require=>false
   gem "terminal-notifier-guard"
-end
-
-group :test, :darwin do
-  gem "rb-fsevent"
+  gem "better_errors"
 end
 
 group :development, :test do
@@ -49,6 +51,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "sqlite3"
   gem "dotenv-rails"
+  gem "pry-rails"
   gem "byebug"
 end
 
@@ -62,6 +65,6 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "selenium-webdriver"
-  gem "guard-rspec"
+  gem "simplecov", require: false
   gem "codeclimate-test-reporter", require: nil
 end

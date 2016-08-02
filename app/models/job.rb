@@ -25,8 +25,6 @@ class Job < ActiveRecord::Base
   validates :author_email, presence: true
   validates :link, format: URI.regexp(%w(http https)), allow_blank: true
 
-  after_create :send_mail_to_admins
-
   def ad
     "Startup: <strong>#{company.title}</strong>" \
       "<br/>Área: <strong>#{category.title}</strong>" \
