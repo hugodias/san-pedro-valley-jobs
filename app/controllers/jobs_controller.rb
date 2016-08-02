@@ -46,9 +46,8 @@ class JobsController < ApplicationController
   end
 
   def approve
-    if @job.pending?
-      @job.published!
-      @job.send_approved_mail
+    service = Jobs::JobApprover.new(@job)
+    if service.run
       flash[:notice] = "Vaga publicada no SPV"
     end
     redirect_to job_path(@job)
