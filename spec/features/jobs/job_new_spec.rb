@@ -3,17 +3,11 @@
 #   I want to create a new job
 #   So other people can see it
 feature "Create a new job", :devise do
-  # Scenario: Visitor can create a job
-  #   Given I am a visitor
-  #   When I visit a new job
-  #   I fill all the required information
-  #   And I submit
-  #   Then I see the success message
-  scenario "visitor can create a job" do
-    company  = FactoryGirl.create(:company)
-    job_type = FactoryGirl.create(:job_type)
-    category = FactoryGirl.create(:category)
+  let!(:company) { FactoryGirl.create(:company) }
+  let!(:job_type) { FactoryGirl.create(:job_type) }
+  let!(:category) { FactoryGirl.create(:category) }
 
+  before do
     visit new_job_path
 
     select company.title, from: "job[company_id]"
@@ -21,7 +15,9 @@ feature "Create a new job", :devise do
     fill_in "Seu e-mail", with: Faker::Internet.email
 
     find(".goto_step3").click
+  end
 
+  scenario "visitor can create a job successfully" do
     fill_in "Titulo da vaga", with: Faker::Name.name
 
     choose category.title
@@ -29,5 +25,10 @@ feature "Create a new job", :devise do
 
     click_button "Publicar"
     expect(page).to have_content "a vaga foi salva com sucesso"
+  end
+
+  scenario "visitor cannot create a job without providing required info" do
+    click_on "Publicar"
+    expect(page).to have_content(/não pode ficar em branco/)
   end
 end
