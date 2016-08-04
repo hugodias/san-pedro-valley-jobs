@@ -1,10 +1,12 @@
 if User.all.empty?
-  user = Admins::UserCreator(
+  service = Admins::UserCreator.new(
     email: Rails.application.secrets.admin_email,
     password: Rails.application.secrets.admin_password,
     admin: true)
 
-  puts "CREATED ADMIN USER: " << user.email
+  service.run!
+
+  puts "CREATED ADMIN USER: " << service.record.email
 end
 
 Category.create([
