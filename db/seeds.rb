@@ -1,5 +1,9 @@
 if User.all.empty?
-  user = CreateAdminService.new.call
+  user = Admins::UserCreator(
+    email: Rails.application.secrets.admin_email,
+    password: Rails.application.secrets.admin_password,
+    admin: true)
+
   puts "CREATED ADMIN USER: " << user.email
 end
 
