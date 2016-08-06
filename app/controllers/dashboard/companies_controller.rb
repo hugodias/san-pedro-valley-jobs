@@ -6,9 +6,6 @@ module Dashboard
     def index
     end
 
-    def show
-    end
-
     private
 
     def fetch_companies
