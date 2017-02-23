@@ -20,7 +20,7 @@ gem "chosen-rails"
 gem "trix"
 gem "nprogress-rails"
 gem "kaminari"
-gem "searchkick"
+gem "searchkick", "~> 1.2.1"
 gem "friendly_id", "~> 5.1.0"
 gem "sidekiq"
 gem "sinatra", require: nil
@@ -43,6 +43,7 @@ group :development do
   gem "rb-inotify", :require=>false
   gem "terminal-notifier-guard"
   gem "better_errors"
+  gem "letter_opener"
 end
 
 group :development, :test do

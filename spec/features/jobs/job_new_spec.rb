@@ -10,9 +10,15 @@ feature "Create a new job", :devise do
   before do
     visit new_job_path
 
-    select company.title, from: "job[company_id]"
-    fill_in "Seu nome",   with: Faker::Name.first_name
-    fill_in "Seu e-mail", with: Faker::Internet.email
+    fill_in "Nome da Startup",  with: Faker::Company.name
+    fill_in "Site",             with: "www.companysite.com"
+    fill_in "Email de contato", with: Faker::Internet.email
+    fill_in "Endereço",         with: Faker::Address.street_address
+
+    find("#goto_step2").click
+
+    fill_in "Seu nome",         with: Faker::Name.first_name
+    fill_in "Seu e-mail",       with: Faker::Internet.email
 
     find(".goto_step3").click
   end
@@ -30,5 +36,13 @@ feature "Create a new job", :devise do
   scenario "visitor cannot create a job without providing required info" do
     click_on "Publicar"
     expect(page).to have_content(/não pode ficar em branco/)
+  end
+
+  scenario "visitor fills company title with an existing company (case sensitive)" do
+    create(:company, title: 'company')
+    fill_in "Nome da Startup", with: 'Company'
+    click_on "Publicar"
+
+    expect{ Company.count }.to_not change{ Company.count }.from(3)
   end
 end
