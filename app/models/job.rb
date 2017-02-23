@@ -1,4 +1,6 @@
 class Job < ActiveRecord::Base
+  attr_accessor :company_params
+
   extend FriendlyId
   enum status: [:pending, :published, :reproved, :removed]
 

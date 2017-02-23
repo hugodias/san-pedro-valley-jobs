@@ -15,7 +15,13 @@
 
               <p>Antes de publicar, leia o <a href="https://github.com/hugodias/san-pedro-valley-jobs/blob/master/GUIA.md" class="link-accent" target="_blank">guia de boas práticas</a> para o cadastro de vagas.</p>
               <hr>
-              <%= f.association :company, label: 'Comece selecionando a startup', hint: 'A startup não aparece aqui? Cadastre gratuitamente em http://www.sanpedrovalley.org', collection: Company.order('title ASC'), input_html: { "data-placeholder": "Escolha a Startup", autofocus: true} %>
+              <%= f.fields_for :company_params do |c| %>
+                  <%= c.input :title, label: 'Nome da Startup', input_html: { "data-placeholder": "Nome da Startup", autofocus: true} %>
+                  <%= c.input :website, label: 'Site', input_html: { "data-placeholder": "Site da Startup"} %>
+                  <%= c.input :email, label: 'Email de contato', input_html: { "data-placeholder": "E-mail de contato"} %>
+                  <%= c.input :address, label: 'Endereço', input_html: { "data-placeholder": "E-mail de contato"} %>
+                  <%= button_tag 'Continuar', class: 'btn btn-primary goto_step2', id: 'goto_step2' %>
+            <% end %>
             </div>
           </div>
         </div>

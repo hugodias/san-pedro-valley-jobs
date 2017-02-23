@@ -84,7 +84,14 @@ class JobsController < ApplicationController
       :job_type_id,
       :how_to_apply,
       :author,
-      :author_email)
+      :author_email,
+      :company_params => [
+          :title,
+          :website,
+          :email,
+          :address
+      ]
+    )
   end
 
   def check_token
