@@ -38,7 +38,7 @@ feature "Create a new job", :devise do
     expect(page).to have_content(/não pode ficar em branco/)
   end
 
-  scenario "visitor fills company title with an existing company (case sensitive)" do
+  scenario "visitor fills company title with an existing company (considering it case sensitive)" do
     create(:company, title: 'company')
     fill_in "Nome da Startup", with: 'Company'
     click_on "Publicar"
