@@ -10,9 +10,15 @@ feature "Create a new job", :devise do
   before do
     visit new_job_path
 
-    select company.title, from: "job[company_id]"
-    fill_in "Seu nome",   with: Faker::Name.first_name
-    fill_in "Seu e-mail", with: Faker::Internet.email
+    fill_in "Nome da Startup",  with: Faker::Company.name
+    fill_in "Site",             with: "www.companysite.com"
+    fill_in "Email de contato", with: Faker::Internet.email
+    fill_in "Endereço",         with: Faker::Address.street_address
+
+    find("#goto_step2").click
+
+    fill_in "Seu nome",         with: Faker::Name.first_name
+    fill_in "Seu e-mail",       with: Faker::Internet.email
 
     find(".goto_step3").click
   end

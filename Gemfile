@@ -43,6 +43,7 @@ group :development do
   gem "rb-inotify", :require=>false
   gem "terminal-notifier-guard"
   gem "better_errors"
+  gem "letter_opener"
 end
 
 group :development, :test do
