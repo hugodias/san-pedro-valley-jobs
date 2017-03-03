@@ -1,4 +1,6 @@
 class Job < ActiveRecord::Base
+  attr_accessor :company_params
+
   extend FriendlyId
   enum status: [:pending, :published, :reproved, :removed]
 
@@ -74,13 +76,7 @@ class Job < ActiveRecord::Base
         where: {
           status: "published"
         },
-        fields: [
-          "title^10",
-          "description",
-          "location",
-          "company_name",
-          "job_type_name",
-          "category_name"],
+        fields: %w(title^10 description location company_name job_type_name category_name),
         page: page,
         per_page: 10)
     end

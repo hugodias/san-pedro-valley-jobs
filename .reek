@@ -1,0 +1,41 @@
+---
+
+### Generic smell configuration
+
+# You can disable smells completely
+IrresponsibleModule:
+  enabled: false
+
+PrimaDonnaMethod:
+  enabled: false
+
+### Excluding directories
+"app/controllers":
+  IrresponsibleModule:
+    enabled: false
+  NestedIterators:
+    max_allowed_nesting: 2
+  UnusedPrivateMethod:
+    enabled: false
+  InstanceVariableAssumption:
+    enabled: false
+"app/helpers":
+  IrresponsibleModule:
+    enabled: false
+  UtilityFunction:
+    enabled: false
+"app/models":
+  UnusedPrivateMethod:
+    enabled: false
+"app/formatters":
+  UnusedPrivateMethod:
+    enabled: false
+# Directories below will not be scanned at all
+exclude_paths:
+  - app/views/**/*
+  - app/assets/**/*
+  - spec/**/*
+  - "**/vendor/**/*"
+  - db/**/*
+  - config/**/*
+  - public/**/*

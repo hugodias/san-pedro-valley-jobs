@@ -20,11 +20,28 @@ window.initJobs = ->
     $('#job_title').focus()
     scrollTo('.step3')
 
-  $(document).on 'change', '#job_company_id', ->
-    if $(this).val().length > 0
-      step2()
+  $(document).on 'click', '#goto_step2', (event) ->
+
+    event.preventDefault()
+
+    if $('#job_company_params_title').val().length > 0
+      if $('#job_company_params_website').val().length > 0
+        if $('#job_company_params_email').val().length > 0
+          if $('#job_company_params_address').val().length > 0
+            step2();
+          else
+            alert 'Você precisa selecionar o endereço da startup.'
+            $('.step2, .step3').hide()
+        else
+          alert 'Você precisa selecionar o email da startup.'
+          $('.step2, .step3').hide()
+      else
+        alert 'Você precisa selecionar o website da startup.'
+        $('.step2, .step3').hide()
     else
+      alert 'Você precisa selecionar o nome da startup.'
       $('.step2, .step3').hide()
+
 
   $(document).on 'click', '.goto_step3', ->
     step3()
