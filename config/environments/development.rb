@@ -20,4 +20,6 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   config.i18n.available_locales = ["pt-BR", :en]
+
+  config.action_mailer.delivery_method = :letter_opener
 end
